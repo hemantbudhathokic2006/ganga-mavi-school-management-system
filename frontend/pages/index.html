@@ -1,0 +1,1956 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- =========================================================
+         GANGA SECONDARY SCHOOL
+         PROFESSIONAL SCHOOL MANAGEMENT SYSTEM — HOMEPAGE
+         File: frontend/pages/index.html
+         ---------------------------------------------------------
+         Cleaned up on 2026-08-09:
+           - Fixed a broken hero-actions block (a missing opening
+             <div class="hero-actions"> and a missing primary CTA
+             meant the "Admissions" button had nothing to sit in).
+           - Wired up the .site-topbar / .language-switcher markup
+             that assets/css/style.css already had styles for.
+           - Fixed the footer social icons to use the existing
+             `.footer-social` class instead of an unstyled
+             `.site-topbar-social` class that never matched any CSS.
+           - Added a "Quick Access" resource strip (NEW section,
+             see comment below) linking Notices, Exam Routine,
+             Downloads and Results — the four things visitors to a
+             government school site look for first.
+         ========================================================= -->
+
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="Ganga Secondary School, Nepal — quality education, academic excellence, discipline, innovation and holistic student development." />
+
+  <meta name="keywords"
+    content="Ganga Secondary School, Nepal School, Secondary School Nepal, School Management System, Education Nepal" />
+
+  <meta name="author" content="Ganga Secondary School" />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta name="theme-color" content="#0F4C81" />
+
+  <!-- Page Title -->
+  <title>Ganga Secondary School | Quality Education & Excellence</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../assets/images/school.ico" />
+
+  <!-- =========================================================
+         GOOGLE FONTS
+         ========================================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- =========================================================
+         BOOTSTRAP 5
+         ========================================================= -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- =========================================================
+         BOOTSTRAP ICONS
+         ========================================================= -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- =========================================================
+         PROJECT CSS
+         All existing CSS files are connected. `style.css` now also
+         contains the `.site-topbar` and `.quick-access` rules that
+         used to be missing, so no extra stylesheet link is needed.
+         ========================================================= -->
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <link rel="stylesheet" href="../assets/css/animation.css" />
+
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+  <!-- =========================================================
+         GANGA SECONDARY SCHOOL
+         TOP INFORMATION BAR
+         ---------------------------------------------------------
+         Slim utility bar shown above the main navbar on every page.
+         Carries office hours, email, phone, and a bilingual
+         language switcher (English / Nepali) — the switcher UI was
+         already styled in style.css but never rendered anywhere
+         until now. `language.js` (loaded at the bottom of this
+         page) is expected to wire up the actual translation logic
+         using the `data-i18n` attributes already present further
+         down this page (see the Academic Calendar section).
+         ========================================================= -->
+
+  <div class="site-topbar" aria-label="School contact information">
+    <div class="container">
+      <div class="site-topbar-inner">
+        <div class="site-topbar-info">
+          <span class="site-topbar-item">
+            <i class="bi bi-clock" aria-hidden="true"></i>
+            <span>School Hours: Sun – Fri, 10:00 AM – 4:00 PM</span>
+          </span>
+
+          <span class="site-topbar-item">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <a href="mailto:info@gangaschool.edu.np">info@gangaschool.edu.np</a>
+          </span>
+
+          <span class="site-topbar-item">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            <a href="tel:+977XXXXXXXXXX">+977-XXXXXXXXXX</a>
+          </span>
+        </div>
+
+        <!-- Language switcher: EN / NP -->
+        <div class="language-switcher" aria-label="Choose site language">
+          <i class="bi bi-translate" aria-hidden="true"></i>
+
+          <button type="button" class="language-switcher-btn is-active" data-lang="en" aria-pressed="true">
+            EN
+          </button>
+
+          <span class="language-switcher-divider" aria-hidden="true">|</span>
+
+          <button type="button" class="language-switcher-btn" data-lang="np" aria-pressed="false">
+            नेपाली
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+         GANGA SECONDARY SCHOOL
+         SHARED NAVIGATION BAR
+         ========================================================= -->
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg school-navbar" aria-label="Main navigation">
+      <div class="container">
+        <!-- =================================================
+                 SCHOOL BRAND / LOGO
+                 ================================================= -->
+
+        <a class="navbar-brand school-brand" href="index.html" aria-label="Ganga Secondary School Home">
+          <span class="school-logo">
+            <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" class="school-logo-image" />
+          </span>
+
+          <span class="school-brand-text">
+            <span class="school-name"> Ganga Secondary School </span>
+
+            <span class="school-location"> Nepal </span>
+          </span>
+        </a>
+
+        <!-- =================================================
+                 MOBILE MENU BUTTON
+                 ================================================= -->
+
+        <button class="navbar-toggler school-navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#schoolMainNavigation" aria-controls="schoolMainNavigation" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- =================================================
+                 MAIN NAVIGATION
+                 ================================================= -->
+
+        <div class="collapse navbar-collapse" id="schoolMainNavigation">
+          <ul class="navbar-nav ms-auto align-items-lg-center school-nav-list">
+            <!-- Search -->
+
+            <li class="nav-item school-search-item">
+              <button type="button" class="school-search-button" aria-label="Open search" title="Search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </button>
+            </li>
+
+            <!-- Home -->
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link active" href="index.html" aria-current="page">
+                Home
+              </a>
+            </li>
+
+            <!-- About -->
+
+            <li class="nav-item dropdown">
+              <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                About
+              </a>
+
+              <ul class="dropdown-menu school-dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="about.html">
+                    About School
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="principal.html">
+                    Principal's Message
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="administration.html">
+                    Administration
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Academics -->
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="academics.html">
+                Academics
+              </a>
+            </li>
+
+            <!-- Admissions -->
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="admissions.html">
+                Admissions
+              </a>
+            </li>
+
+            <!-- School Life -->
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="student-life.html">
+                Student Life
+              </a>
+            </li>
+
+            <!---team--->
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="team.html">
+                Team
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                More
+              </a>
+
+              <ul class="dropdown-menu school-dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="news.html"> News </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="events.html"> Events </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="gallery.html"> Gallery </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="downloads.html">
+                    Downloads
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="result.html"> Results </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Faculty -->
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="faculty.html">
+                Faculty
+              </a>
+            </li>
+
+            <!-- Contact -->
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="contact.html">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+         SCHOOL ANNOUNCEMENT BAR
+         ---------------------------------------------------------
+         Continuous scrolling ticker for important notices.
+         Does not pause on hover by design (see style.css).
+         ========================================================= -->
+
+  <section class="school-announcement" aria-label="School announcements">
+    <div class="container-fluid px-0">
+      <div class="announcement-inner">
+        <!-- Label -->
+
+        <div class="announcement-label">
+          <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+
+          <span>Notice </span>
+        </div>
+
+        <!-- Running notice area -->
+
+        <div class="announcement-marquee" aria-live="polite">
+          <div class="announcement-track">
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+              </span>
+
+              <span> Admission Open for Academic Session 2083 </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+              </span>
+
+              <span>School Annual Program and Events </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              </span>
+
+              <span> Important School Notice for Students and Parents </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+              </span>
+
+              <span> Academic Updates and Examination Information </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <!-- Duplicated track — required for seamless continuous
+                   scrolling (see @keyframes school-announcement-scroll
+                   in style.css, which translates by exactly -50%). -->
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+              </span>
+
+              <span> Admission Open for Academic Session 2083 </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+              </span>
+
+              <span> School Annual Program and Events </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              </span>
+
+              <span> Important School Notice for Students and Parents </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+              </span>
+
+              <span> Academic Updates and Examination Information </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         HERO / SCHOOL WELCOME SECTION
+         ---------------------------------------------------------
+         FIX: the original file was missing the opening
+         <div class="hero-actions"> wrapper and the primary CTA
+         button, so the markup didn't validate and the "Admissions"
+         link had no matching styled container. Both are restored
+         below, with a primary CTA pointing to Academics.
+         ========================================================= -->
+
+  <section class="school-hero" id="home" aria-labelledby="hero-title">
+    <!-- Hero background -->
+
+    <div class="hero-background">
+      <img src="../assets/images/banner1.png" alt="Ganga Secondary School " class="hero-background-image" />
+    </div>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Hero content -->
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 col-xl-7">
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-line"></span>
+
+              <span> Welcome to Ganga Secondary School </span>
+            </div>
+
+            <h1 class="hero-title" id="hero-title">
+              Inspiring Minds.
+              <span>Building Futures.</span>
+            </h1>
+
+            <p class="hero-description">
+              A place where knowledge, character, discipline and innovation
+              come together to empower students for a brighter future.
+            </p>
+
+            <!-- Hero actions -->
+
+            <div class="hero-actions">
+              <a href="academics.html" class="hero-primary-button">
+                <span> Explore Academics </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+              <a href="admissions.html" class="hero-secondary-button">
+                <i class="bi bi-mortarboard" aria-hidden="true"></i>
+
+                <span> Admissions </span>
+              </a>
+            </div>
+
+            <!-- Quick school highlights -->
+
+            <div class="hero-highlights">
+              <div class="hero-highlight">
+                <span class="hero-highlight-icon">
+                  <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+                </span>
+
+                <span class="hero-highlight-text">
+                  Quality
+                  <small>Education</small>
+                </span>
+              </div>
+
+              <div class="hero-highlight">
+                <span class="hero-highlight-icon">
+                  <i class="bi bi-people-fill" aria-hidden="true"></i>
+                </span>
+
+                <span class="hero-highlight-text">
+                  Holistic
+                  <small>Development</small>
+                </span>
+              </div>
+
+              <div class="hero-highlight">
+                <span class="hero-highlight-icon">
+                  <i class="bi bi-award-fill" aria-hidden="true"></i>
+                </span>
+
+                <span class="hero-highlight-text">
+                  Academic
+                  <small>Excellence</small>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero side visual -->
+
+        <div class="col-lg-4 col-xl-5 d-none d-lg-block">
+          <div class="hero-visual">
+            <div class="hero-visual-frame" aria-hidden="true"></div>
+
+            <div class="hero-visual-card">
+              <img src="../assets/images/banner1.png" alt="Ganga Secondary School  environment"
+                class="hero-visual-image" />
+            </div>
+
+            <div class="hero-floating-card">
+              <span class="hero-floating-icon">
+                <i class="bi bi-stars" aria-hidden="true"></i>
+              </span>
+
+              <span class="hero-floating-content">
+                <strong> Excellence in Education </strong>
+
+                <small> Learning • Character • Future </small>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+
+    <a href="#school-introduction" class="hero-scroll-indicator" aria-label="Scroll to school introduction">
+      <span> Explore </span>
+
+      <i class="bi bi-chevron-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- =========================================================
+         SCHOOL INTRODUCTION
+         ========================================================= -->
+
+  <section class="school-introduction section-padding" id="school-introduction" aria-labelledby="introduction-title">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Left — school image -->
+
+        <div class="col-lg-6">
+          <div class="introduction-visual">
+            <div class="introduction-image-main">
+              <img src="../assets/images/banner2.png" alt="Ganga Secondary School" loading="lazy" />
+            </div>
+
+            <div class="introduction-info-card">
+              <span class="introduction-info-icon">
+                <i class="bi bi-award-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="introduction-info-content">
+                <strong> Excellence </strong>
+
+                <small> in Education </small>
+              </span>
+            </div>
+
+            <span class="introduction-decoration" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <!-- Right — introduction content -->
+
+        <div class="col-lg-6">
+          <div class="introduction-content">
+            <span class="section-label">
+              <span class="section-label-line"></span>
+
+              About Our School
+            </span>
+
+            <h2 class="section-title" id="introduction-title">
+              Empowering Students
+              <span>Through Education.</span>
+            </h2>
+
+            <p class="introduction-lead">
+              Ganga Secondary School is committed to creating a supportive and
+              inspiring learning environment where every student can discover
+              their potential.
+            </p>
+
+            <p class="introduction-description">
+              Our approach combines academic learning with character
+              development, creativity, discipline and practical skills. We
+              believe education is not only about achieving results, but also
+              about preparing responsible, confident and capable individuals
+              for the future.
+            </p>
+
+            <div class="introduction-points">
+              <div class="introduction-point">
+                <span class="introduction-point-icon">
+                  <i class="bi bi-check-lg" aria-hidden="true"></i>
+                </span>
+
+                <span> Student-centered learning </span>
+              </div>
+
+              <div class="introduction-point">
+                <span class="introduction-point-icon">
+                  <i class="bi bi-check-lg" aria-hidden="true"></i>
+                </span>
+
+                <span> Strong academic foundation </span>
+              </div>
+
+              <div class="introduction-point">
+                <span class="introduction-point-icon">
+                  <i class="bi bi-check-lg" aria-hidden="true"></i>
+                </span>
+
+                <span> Character and leadership development </span>
+              </div>
+
+              <div class="introduction-point">
+                <span class="introduction-point-icon">
+                  <i class="bi bi-check-lg" aria-hidden="true"></i>
+                </span>
+
+                <span> Safe and inclusive learning environment </span>
+              </div>
+            </div>
+
+            <div class="introduction-action">
+              <a href="about.html" class="introduction-button">
+                <span> Learn More About Us </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         SCHOOL HIGHLIGHTS / KEY STATISTICS
+         ========================================================= -->
+
+  <section class="school-highlights" aria-labelledby="highlights-title">
+    <div class="container">
+      <div class="highlights-header text-center">
+        <span class="section-label justify-content-center">
+          <span class="section-label-line"></span>
+
+          Our School at a Glance
+
+          <span class="section-label-line"></span>
+        </span>
+
+        <h2 class="section-title highlights-title mx-auto" id="highlights-title">
+          Growing Through
+          <span>Knowledge & Excellence.</span>
+        </h2>
+
+        <p class="highlights-description mx-auto">
+          A learning community focused on academic achievement, personal
+          growth, discipline and a brighter future.
+        </p>
+      </div>
+
+      <div class="row g-3 g-lg-4 mt-4">
+        <!-- Students -->
+
+        <div class="col-6 col-lg-3">
+          <article class="highlight-card">
+            <div class="highlight-card-top">
+              <span class="highlight-icon">
+                <i class="bi bi-people-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="highlight-card-number" data-count="1000">
+                0+
+              </span>
+            </div>
+
+            <h3 class="highlight-card-title">Students</h3>
+
+            <p class="highlight-card-text">
+              A diverse and growing student community.
+            </p>
+          </article>
+        </div>
+
+        <!-- Faculty -->
+
+        <div class="col-6 col-lg-3">
+          <article class="highlight-card">
+            <div class="highlight-card-top">
+              <span class="highlight-icon">
+                <i class="bi bi-person-workspace" aria-hidden="true"></i>
+              </span>
+
+              <span class="highlight-card-number" data-count="50"> 0+ </span>
+            </div>
+
+            <h3 class="highlight-card-title">Faculty Members</h3>
+
+            <p class="highlight-card-text">
+              Dedicated educators guiding every learner.
+            </p>
+          </article>
+        </div>
+
+        <!-- Programs -->
+
+        <div class="col-6 col-lg-3">
+          <article class="highlight-card">
+            <div class="highlight-card-top">
+              <span class="highlight-icon">
+                <i class="bi bi-book-half" aria-hidden="true"></i>
+              </span>
+
+              <span class="highlight-card-number" data-count="20"> 0+ </span>
+            </div>
+
+            <h3 class="highlight-card-title">Learning Programs</h3>
+
+            <p class="highlight-card-text">
+              Academic and co-curricular opportunities.
+            </p>
+          </article>
+        </div>
+
+        <!-- Years -->
+
+        <div class="col-6 col-lg-3">
+          <article class="highlight-card">
+            <div class="highlight-card-top">
+              <span class="highlight-icon">
+                <i class="bi bi-award-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="highlight-card-number" data-count="25"> 0+ </span>
+            </div>
+
+            <h3 class="highlight-card-title">Years of Excellence</h3>
+
+            <p class="highlight-card-text">
+              Building knowledge, values and future leaders.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         ACADEMIC EXCELLENCE / WHY CHOOSE OUR SCHOOL
+         ========================================================= -->
+
+  <section class="academic-excellence section-padding" id="academic-excellence"
+    aria-labelledby="academic-excellence-title">
+    <div class="container">
+      <div class="row justify-content-between align-items-end">
+        <div class="col-lg-7">
+          <span class="section-label">
+            <span class="section-label-line"></span>
+
+            Why Choose Ganga
+          </span>
+
+          <h2 class="section-title" id="academic-excellence-title">
+            Learning Beyond
+            <span>the Classroom.</span>
+          </h2>
+        </div>
+
+        <div class="col-lg-5">
+          <p class="academic-header-description">
+            We create meaningful learning experiences that develop knowledge,
+            confidence, creativity and responsible citizenship.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-3 g-lg-4 mt-4">
+        <!-- Feature 01 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="academic-feature-card">
+            <div class="academic-feature-top">
+              <span class="academic-feature-icon">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="academic-feature-number"> 01 </span>
+            </div>
+
+            <h3 class="academic-feature-title">Academic Excellence</h3>
+
+            <p class="academic-feature-description">
+              A strong academic foundation supported by structured learning,
+              dedicated teachers and continuous student development.
+            </p>
+
+            <a href="academics.html" class="academic-feature-link">
+              <span> Explore Academics </span>
+
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+
+        <!-- Feature 02 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="academic-feature-card">
+            <div class="academic-feature-top">
+              <span class="academic-feature-icon">
+                <i class="bi bi-person-hearts" aria-hidden="true"></i>
+              </span>
+
+              <span class="academic-feature-number"> 02 </span>
+            </div>
+
+            <h3 class="academic-feature-title">Holistic Development</h3>
+
+            <p class="academic-feature-description">
+              We encourage students to grow academically, socially, creatively
+              and personally through meaningful activities and experiences.
+            </p>
+
+            <a href="student-life.html" class="academic-feature-link">
+              <span> Student Life </span>
+
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+
+        <!-- Feature 03 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="academic-feature-card">
+            <div class="academic-feature-top">
+              <span class="academic-feature-icon">
+                <i class="bi bi-lightbulb-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="academic-feature-number"> 03 </span>
+            </div>
+
+            <h3 class="academic-feature-title">Innovation & Creativity</h3>
+
+            <p class="academic-feature-description">
+              Students are encouraged to think critically, explore ideas and
+              develop practical solutions for the changing world.
+            </p>
+
+            <a href="academics.html" class="academic-feature-link">
+              <span> Discover More </span>
+
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+
+        <!-- Feature 04 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="academic-feature-card">
+            <div class="academic-feature-top">
+              <span class="academic-feature-icon">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+              </span>
+
+              <span class="academic-feature-number"> 04 </span>
+            </div>
+
+            <h3 class="academic-feature-title">Safe Learning Environment</h3>
+
+            <p class="academic-feature-description">
+              A respectful and supportive environment where students can
+              learn, participate and express themselves with confidence.
+            </p>
+
+            <a href="about.html" class="academic-feature-link">
+              <span> Our Approach </span>
+
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+
+        <!-- Feature 05 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="academic-feature-card">
+            <div class="academic-feature-top">
+              <span class="academic-feature-icon">
+                <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="academic-feature-number"> 05 </span>
+            </div>
+
+            <h3 class="academic-feature-title">Co-Curricular Activities</h3>
+
+            <p class="academic-feature-description">
+              Sports, arts, clubs and activities that help students discover
+              interests and develop teamwork and leadership.
+            </p>
+
+            <a href="student-life.html" class="academic-feature-link">
+              <span> Student Activities </span>
+
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+
+        <!-- Feature 06 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="academic-feature-card academic-feature-card-dark">
+            <div class="academic-feature-top">
+              <span class="academic-feature-icon">
+                <i class="bi bi-arrow-right-circle-fill" aria-hidden="true"></i>
+              </span>
+
+              <span class="academic-feature-number"> 06 </span>
+            </div>
+
+            <h3 class="academic-feature-title">Discover Ganga</h3>
+
+            <p class="academic-feature-description">
+              Explore our school, academic programs, admission information and
+              the opportunities available to our students.
+            </p>
+
+            <a href="about.html" class="academic-feature-link">
+              <span> Explore Our School </span>
+
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         PRINCIPAL'S MESSAGE
+         ========================================================= -->
+
+  <section class="principal-message section-padding" id="principal-message" aria-labelledby="principal-message-title">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Left — principal image -->
+
+        <div class="col-lg-5">
+          <div class="principal-visual">
+            <div class="principal-image-wrapper">
+              <img src="../assets/images/teachers/3.png" alt="Principal of Ganga Secondary School" loading="lazy" />
+            </div>
+
+            <span class="principal-visual-accent" aria-hidden="true"></span>
+
+            <div class="principal-identity">
+              <strong> Principal </strong>
+
+              <span> Ganga Secondary School </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — principal message -->
+
+        <div class="col-lg-7">
+          <div class="principal-content">
+            <span class="section-label">
+              <span class="section-label-line"></span>
+
+              Principal's Message
+            </span>
+
+            <h2 class="section-title" id="principal-message-title">
+              Inspiring Minds,
+              <span>Building Futures.</span>
+            </h2>
+
+            <div class="principal-quote-icon" aria-hidden="true">
+              <i class="bi bi-quote"></i>
+            </div>
+
+            <blockquote class="principal-quote">
+              Education is a journey of discovery, character and continuous
+              growth. At Ganga Secondary School, we strive to provide every
+              student with the knowledge, confidence and values needed to
+              contribute meaningfully to society.
+            </blockquote>
+
+            <p class="principal-description">
+              Our commitment is to create an environment where students are
+              encouraged to learn with curiosity, act with responsibility and
+              dream with confidence. Together with our dedicated teachers,
+              parents and wider school community, we continue working toward a
+              brighter future for every learner.
+            </p>
+
+            <div class="principal-signature">
+              <strong> Principal </strong>
+
+              <span> Ganga Secondary School </span>
+            </div>
+
+            <a href="principal.html" class="principal-button">
+              <span> Read Full Message </span>
+
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         ACADEMIC CALENDAR / SCHOOL HOLIDAYS
+         (Horizontal scroll-snap slider — see style.css section 17)
+         ========================================================= -->
+
+  <section class="school-calendar section-padding" id="school-calendar" aria-labelledby="school-calendar-title"
+    data-i18n-section="calendar">
+    <div class="container">
+      <div class="highlights-header text-center">
+        <span class="section-label justify-content-center">
+          <span class="section-label-line"></span>
+          Academic Calendar
+          <span class="section-label-line"></span>
+        </span>
+
+        <h2 class="section-title mx-auto" id="school-calendar-title" data-i18n="calendar.title">
+          School Holidays &amp; <span>Off Days.</span>
+        </h2>
+
+        <p class="highlights-description mx-auto" data-i18n="calendar.description">
+          Plan ahead with our upcoming school holidays, public off-days and
+          term breaks for this academic session.
+        </p>
+      </div>
+
+      <div class="calendar-slider">
+        <button type="button" class="calendar-nav calendar-nav-prev" aria-label="Scroll to previous holidays"
+          aria-controls="calendarScroll">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="calendar-scroll" id="calendarScroll" tabindex="0"
+          aria-label="Academic calendar — scroll horizontally for more holidays">
+          <!-- Janai Purnima -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.janaiPurnima.date">Aug 17, 2026</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.janaiPurnima.title">
+              Janai Purnima
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.janaiPurnima.description">
+              School closed — public holiday.
+            </p>
+          </article>
+
+          <!-- Dashain Vacation -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.dashain.date">Sep 22 – Oct 05, 2026</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.dashain.title">
+              Dashain Vacation
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.dashain.description">
+              School closed for Dashain festival.
+            </p>
+          </article>
+
+          <!-- Tihar Vacation -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.tihar.date">Oct 19 – Oct 23, 2026</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.tihar.title">
+              Tihar Vacation
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.tihar.description">
+              School closed for Tihar festival.
+            </p>
+          </article>
+
+          <!-- Weekly Off Day -->
+          <article class="calendar-card calendar-card-accent">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-week" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.weeklyOff.date">Every Saturday</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.weeklyOff.title">
+              Weekly Off Day
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.weeklyOff.description">
+              Regular weekly holiday, school closed.
+            </p>
+          </article>
+
+          <!-- Constitution Day — placeholder date, confirm official date -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.constitutionDay.date">Sep 19, 2026 (sample)</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.constitutionDay.title">
+              Constitution Day
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.constitutionDay.description">
+              School closed — national holiday.
+            </p>
+          </article>
+
+          <!-- Democracy Day — placeholder date -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.democracyDay.date">Feb 2027 (sample)</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.democracyDay.title">
+              Democracy Day
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.democracyDay.description">
+              School closed — national holiday.
+            </p>
+          </article>
+
+          <!-- Holi — placeholder date -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.holi.date">Mar 2027 (sample)</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.holi.title">
+              Holi
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.holi.description">
+              School closed — festival of colors.
+            </p>
+          </article>
+
+          <!-- Buddha Jayanti — placeholder date -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.buddhaJayanti.date">May 2027 (sample)</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.buddhaJayanti.title">
+              Buddha Jayanti
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.buddhaJayanti.description">
+              School closed — public holiday.
+            </p>
+          </article>
+
+          <!-- Nepali New Year — placeholder date -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-calendar-x" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.newYear.date">Apr 2027 (sample)</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.newYear.title">
+              Nepali New Year
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.newYear.description">
+              School closed — New Year's Day.
+            </p>
+          </article>
+
+          <!-- School Foundation Day — date TBD -->
+          <article class="calendar-card calendar-card-accent">
+            <span class="calendar-card-icon">
+              <i class="bi bi-flag" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.foundationDay.date">Date to be announced</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.foundationDay.title">
+              School Foundation Day
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.foundationDay.description">
+              Special program, school open half-day.
+            </p>
+          </article>
+
+          <!-- Winter Vacation — placeholder date -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-snow2" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.winterVacation.date">Dec 2026 – Jan 2027
+              (sample)</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.winterVacation.title">
+              Winter Vacation
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.winterVacation.description">
+              School closed for winter break.
+            </p>
+          </article>
+
+          <!-- Summer Vacation — date TBD -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-sun" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.summerVacation.date">Date to be announced</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.summerVacation.title">
+              Summer Vacation
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.summerVacation.description">
+              School closed for summer break.
+            </p>
+          </article>
+
+          <!-- Examination Break — date TBD -->
+          <article class="calendar-card">
+            <span class="calendar-card-icon">
+              <i class="bi bi-journal-text" aria-hidden="true"></i>
+            </span>
+            <span class="calendar-card-date" data-i18n="calendar.examBreak.date">Date to be announced</span>
+            <h3 class="calendar-card-title" data-i18n="calendar.examBreak.title">
+              Examination Break
+            </h3>
+            <p class="calendar-card-text" data-i18n="calendar.examBreak.description">
+              School closed for term examinations.
+            </p>
+          </article>
+        </div>
+
+        <button type="button" class="calendar-nav calendar-nav-next" aria-label="Scroll to next holidays"
+          aria-controls="calendarScroll">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="calendar-footer text-center">
+        <a href="events.html" class="latest-news-button" data-i18n="calendar.viewFull">
+          View Full Academic Calendar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         QUICK ACCESS / GOVERNMENT RESOURCES STRIP
+         ---------------------------------------------------------
+         NEW SECTION: the four things visitors to a Nepali
+         government/community school website usually come looking
+         for first. Each card links to a page that already exists
+         in the navigation, so nothing new needs to be built to make
+         these links work.
+         ========================================================= -->
+
+  <section class="quick-access" aria-labelledby="quick-access-title">
+    <div class="container">
+      <h2 class="visually-hidden" id="quick-access-title">
+        Quick access to school resources
+      </h2>
+
+      <div class="quick-access-grid">
+        <a href="news.html" class="quick-access-card">
+          <span class="quick-access-icon">
+            <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+          </span>
+          <span class="quick-access-text">
+            <strong>Notices &amp; Circulars</strong>
+            <small>Latest official announcements</small>
+          </span>
+        </a>
+
+        <a href="events.html" class="quick-access-card">
+          <span class="quick-access-icon">
+            <i class="bi bi-calendar2-week-fill" aria-hidden="true"></i>
+          </span>
+          <span class="quick-access-text">
+            <strong>Exam Routine</strong>
+            <small>Upcoming exams &amp; schedules</small>
+          </span>
+        </a>
+
+        <a href="downloads.html" class="quick-access-card">
+          <span class="quick-access-icon">
+            <i class="bi bi-file-earmark-arrow-down-fill" aria-hidden="true"></i>
+          </span>
+          <span class="quick-access-text">
+            <strong>Downloads</strong>
+            <small>Forms, syllabus &amp; documents</small>
+          </span>
+        </a>
+
+        <a href="result.html" class="quick-access-card">
+          <span class="quick-access-icon">
+            <i class="bi bi-clipboard2-check-fill" aria-hidden="true"></i>
+          </span>
+          <span class="quick-access-text">
+            <strong>Check Result</strong>
+            <small>Online student results</small>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         LATEST NEWS & NOTICES
+         ========================================================= -->
+
+  <section class="latest-news section-padding" id="latest-news" aria-labelledby="latest-news-title">
+    <div class="container">
+      <div class="row align-items-end justify-content-between">
+        <div class="col-lg-7">
+          <span class="section-label">
+            <span class="section-label-line"></span>
+
+            News & Notices
+          </span>
+
+          <h2 class="section-title" id="latest-news-title">
+            Stay Connected With
+            <span>Ganga School.</span>
+          </h2>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <p class="latest-news-description">
+            Stay informed about school activities, announcements, events and
+            important updates.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-4">
+        <!-- News card 01 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="news-card">
+            <div class="news-card-image">
+              <img src="../assets/images/gallery/1.png" alt="School academic activity" loading="lazy" />
+
+              <span class="news-category"> Academic </span>
+            </div>
+
+            <div class="news-card-content">
+              <div class="news-date">
+                <i class="bi bi-calendar3" aria-hidden="true"></i>
+
+                <time datetime="2026-08-01"> August 01, 2026 </time>
+              </div>
+
+              <h3 class="news-card-title">
+                Academic Activities and Learning Updates
+              </h3>
+
+              <p class="news-card-description">
+                Explore recent academic activities, classroom initiatives and
+                learning opportunities at Ganga Secondary School.
+              </p>
+
+              <a href="news.html" class="news-card-link" aria-label="Read academic activities news">
+                <span> Read More </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- News card 02 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="news-card">
+            <div class="news-card-image">
+              <img src="../assets/images/gallery/2.png" alt="Students participating in a school event" loading="lazy" />
+
+              <span class="news-category"> Events </span>
+            </div>
+
+            <div class="news-card-content">
+              <div class="news-date">
+                <i class="bi bi-calendar3" aria-hidden="true"></i>
+
+                <time datetime="2026-07-25"> July 25, 2026 </time>
+              </div>
+
+              <h3 class="news-card-title">
+                School Events and Student Activities
+              </h3>
+
+              <p class="news-card-description">
+                Discover upcoming and recent school events designed to
+                encourage participation, teamwork and creativity.
+              </p>
+
+              <a href="events.html" class="news-card-link" aria-label="View school events">
+                <span> View Events </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- News card 03 -->
+
+        <div class="col-md-6 col-lg-4">
+          <article class="news-card">
+            <div class="news-card-image">
+              <img src="../assets/images/gallery/3.png" alt="Important school notice" loading="lazy" />
+
+              <span class="news-category news-category-notice"> Notice </span>
+            </div>
+
+            <div class="news-card-content">
+              <div class="news-date">
+                <i class="bi bi-calendar3" aria-hidden="true"></i>
+
+                <time datetime="2026-07-20"> July 20, 2026 </time>
+              </div>
+
+              <h3 class="news-card-title">Important School Announcements</h3>
+
+              <p class="news-card-description">
+                Find important announcements, notices and information for
+                students, parents and the wider school community.
+              </p>
+
+              <a href="news.html" class="news-card-link" aria-label="Read school announcements">
+                <span> Read Notices </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="latest-news-action text-center">
+        <a href="news.html" class="latest-news-button">
+          <span> View All News & Notices </span>
+
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         UPCOMING EVENTS & ACTIVITIES
+         ========================================================= -->
+
+  <section class="upcoming-events section-padding" id="upcoming-events" aria-labelledby="upcoming-events-title">
+    <div class="container">
+      <div class="row align-items-end justify-content-between">
+        <div class="col-lg-7">
+          <span class="section-label">
+            <span class="section-label-line"></span>
+
+            Upcoming Events
+          </span>
+
+          <h2 class="section-title" id="upcoming-events-title">
+            What's Happening
+            <span>at Ganga?</span>
+          </h2>
+        </div>
+
+        <div class="col-lg-5">
+          <p class="events-header-description">
+            Keep up with upcoming school programs, activities and important
+            community events.
+          </p>
+        </div>
+      </div>
+
+      <div class="events-list mt-4">
+        <!-- Event 01 -->
+
+        <article class="event-item">
+          <div class="event-date">
+            <span class="event-date-day"> 15 </span>
+
+            <span class="event-date-month"> AUG </span>
+          </div>
+
+          <div class="event-information">
+            <span class="event-type">
+              <i class="bi bi-calendar-event" aria-hidden="true"></i>
+
+              School Event
+            </span>
+
+            <h3 class="event-title">Annual School Program</h3>
+
+            <p class="event-description">
+              A special school program bringing together students, teachers
+              and parents for a day of learning, creativity and celebration.
+            </p>
+
+            <div class="event-meta">
+              <span>
+                <i class="bi bi-clock" aria-hidden="true"></i>
+
+                10:00 AM
+              </span>
+
+              <span>
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+
+                School Auditorium
+              </span>
+            </div>
+          </div>
+
+          <div class="event-action">
+            <a href="events.html" class="event-view-button" aria-label="View Annual School Program">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Event 02 -->
+
+        <article class="event-item">
+          <div class="event-date">
+            <span class="event-date-day"> 22 </span>
+
+            <span class="event-date-month"> AUG </span>
+          </div>
+
+          <div class="event-information">
+            <span class="event-type">
+              <i class="bi bi-trophy" aria-hidden="true"></i>
+
+              Sports
+            </span>
+
+            <h3 class="event-title">Inter-House Sports Competition</h3>
+
+            <p class="event-description">
+              Students participate in a range of sporting activities that
+              promote teamwork, discipline, confidence and healthy
+              competition.
+            </p>
+
+            <div class="event-meta">
+              <span>
+                <i class="bi bi-clock" aria-hidden="true"></i>
+
+                9:00 AM
+              </span>
+
+              <span>
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+
+                School Ground
+              </span>
+            </div>
+          </div>
+
+          <div class="event-action">
+            <a href="events.html" class="event-view-button" aria-label="View Inter-House Sports Competition">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Event 03 -->
+
+        <article class="event-item">
+          <div class="event-date">
+            <span class="event-date-day"> 30 </span>
+
+            <span class="event-date-month"> AUG </span>
+          </div>
+
+          <div class="event-information">
+            <span class="event-type">
+              <i class="bi bi-lightbulb" aria-hidden="true"></i>
+
+              Academic
+            </span>
+
+            <h3 class="event-title">Science & Innovation Exhibition</h3>
+
+            <p class="event-description">
+              Students showcase creative projects, experiments and innovative
+              ideas developed through practical learning.
+            </p>
+
+            <div class="event-meta">
+              <span>
+                <i class="bi bi-clock" aria-hidden="true"></i>
+
+                11:00 AM
+              </span>
+
+              <span>
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+
+                School Hall
+              </span>
+            </div>
+          </div>
+
+          <div class="event-action">
+            <a href="events.html" class="event-view-button" aria-label="View Science and Innovation Exhibition">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="events-footer text-center">
+        <a href="events.html" class="events-view-all">
+          <span> View All Events </span>
+
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+         CONTACT / VISIT GANGA SCHOOL
+         ========================================================= -->
+
+  <section class="home-contact" id="home-contact" aria-labelledby="home-contact-title">
+    <div class="container">
+      <div class="home-contact-wrapper">
+        <!-- Contact intro -->
+
+        <div class="home-contact-content">
+          <span class="section-label">
+            <span class="section-label-line"></span>
+
+            Get In Touch
+          </span>
+
+          <h2 class="section-title" id="home-contact-title">
+            We'd Love to
+            <span>Hear From You.</span>
+          </h2>
+
+          <p class="home-contact-description">
+            Have a question about admissions, academics or school activities?
+            Our school team is here to help you with the information you need.
+          </p>
+
+          <div class="home-contact-details">
+            <!-- Address -->
+
+            <div class="home-contact-item">
+              <span class="home-contact-icon" aria-hidden="true">
+                <i class="bi bi-geo-alt"></i>
+              </span>
+
+              <div>
+                <strong> Visit Us </strong>
+
+                <span>Ghorahi-2, Rampur, Dang, Nepal </span>
+              </div>
+            </div>
+
+            <!-- Phone -->
+
+            <div class="home-contact-item">
+              <span class="home-contact-icon" aria-hidden="true">
+                <i class="bi bi-telephone"></i>
+              </span>
+
+              <div>
+                <strong> Call Us </strong>
+
+                <a href="tel:+977XXXXXXXXXX"> +977-XXXXXXXXXX </a>
+              </div>
+            </div>
+
+            <!-- Email -->
+
+            <div class="home-contact-item">
+              <span class="home-contact-icon" aria-hidden="true">
+                <i class="bi bi-envelope"></i>
+              </span>
+
+              <div>
+                <strong> Email Us </strong>
+
+                <a href="mailto:info@gangaschool.edu.np">
+                  info@gangaschool.edu.np
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="home-contact-button">
+            <span> Contact School </span>
+
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!-- Real school location map -->
+
+        <div class="home-contact-map">
+          <iframe src="https://www.google.com/maps?q=27.9927328,82.5341689&output=embed"
+            title="Ganga Higher Secondary School, Rampur, Ghorahi-2, Dang Location" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+         GANGA SECONDARY SCHOOL — SHARED FOOTER COMPONENT
+         ---------------------------------------------------------
+         FIX: the social-icon list below previously used the class
+         `site-topbar-social`, which has no matching CSS anywhere in
+         the stylesheet, so the icons rendered as plain unstyled
+         links. It now uses `.footer-social`, which was already
+         fully designed for this exact spot.
+
+         FIX 2: Quick Links / School / Contact Us were nested INSIDE
+         .footer-school (which only wraps the logo+description+social
+         block), instead of being siblings of .footer-school-column
+         inside .footer-grid. That's why they were stacking under the
+         logo instead of forming 4 side-by-side columns. .footer-school
+         now closes right after .footer-social, and all four columns
+         sit directly inside .footer-grid as siblings.
+         ========================================================= -->
+
+  <footer class="site-footer">
+    <div class="site-footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- School information -->
+
+          <div class="footer-school-column">
+            <div class="footer-school">
+              <a href="index.html" class="footer-brand" aria-label="Ganga Secondary School Home">
+                <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" loading="lazy" />
+
+                <span>
+                  <strong> Ganga Secondary School </strong>
+
+                  <small> Nepal </small>
+                </span>
+              </a>
+
+              <p class="footer-description">
+                Committed to quality education, character development and
+                creating confident learners prepared for a changing world.
+              </p>
+
+              <div class="footer-social" aria-label="Social media links">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61590301234695" class="social-facebook"
+                  aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@YourSchoolAccount" class="social-youtube" aria-label="YouTube"
+                  title="YouTube" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/YourSchoolAccount/" class="social-instagram" aria-label="Instagram"
+                  title="Instagram" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/977XXXXXXXXXX" class="social-whatsapp" aria-label="WhatsApp" title="WhatsApp"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/YourSchoolAccount/" class="social-linkedin"
+                  aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- ^ .footer-school and .footer-school-column both close here now -->
+
+          <!-- Quick links -->
+
+          <div class="footer-links-column">
+            <div class="footer-column">
+              <h2 class="footer-heading">Quick Links</h2>
+
+              <ul class="footer-links">
+                <li><a href="index.html"> Home </a></li>
+
+                <li><a href="about.html"> About School </a></li>
+
+                <li><a href="academics.html"> Academics </a></li>
+
+                <li><a href="admissions.html"> Admissions </a></li>
+
+                <li><a href="contact.html"> Contact </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- School -->
+
+          <div class="footer-links-column">
+            <div class="footer-column">
+              <h2 class="footer-heading">School</h2>
+
+              <ul class="footer-links">
+                <li><a href="principal.html"> Principal </a></li>
+
+                <li><a href="faculty.html"> Faculty </a></li>
+
+                <li><a href="student-life.html"> Student Life </a></li>
+
+                <li><a href="events.html"> Events </a></li>
+
+                <li><a href="gallery.html"> Gallery </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact -->
+
+          <div class="footer-contact-column">
+            <div class="footer-column">
+              <h2 class="footer-heading">Contact Us</h2>
+
+              <ul class="footer-contact-list">
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-geo-alt"></i>
+                  </span>
+
+                  <span> Ganga Secondary School, Nepal </span>
+                </li>
+
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-telephone"></i>
+                  </span>
+
+                  <a href="tel:+977XXXXXXXXXX"> +977-XXXXXXXXXX </a>
+                </li>
+
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+
+                  <a href="mailto:info@gangaschool.edu.np">
+                    info@gangaschool.edu.np
+                  </a>
+                </li>
+
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-clock"></i>
+                  </span>
+
+                  <span> Sun – Fri: 10:00 AM – 4:00 PM </span>
+                </li>
+              </ul>
+
+              <a href="contact.html" class="footer-contact-button">
+                <span> Contact School </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ^ .footer-grid closes here -->
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <p>
+            © <span id="footer-current-year"> 2026 </span>
+            Ganga Secondary School. All rights reserved.
+          </p>
+
+          <div class="footer-legal-links">
+            <a href="#"> Privacy Policy </a>
+
+            <span aria-hidden="true"> | </span>
+
+            <a href="#"> developed by Hemant Budhathoki </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+         BOOTSTRAP JAVASCRIPT
+         ========================================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- =========================================================
+         PROJECT JAVASCRIPT
+         ========================================================= -->
+
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/include.js" defer></script>
+
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script src="../assets/js/language.js" defer></script>
+
+  <script src="../assets/js/slider.js" defer></script>
+
+  <script src="../assets/js/validation.js" defer></script>
+
+  <script src="../assets/js/gallery.js" defer></script>
+
+  <script src="../assets/js/chatbot.js" defer></script>
+
+  <script src="../assets/js/result.js" defer></script>
+</body>
+
+</html>

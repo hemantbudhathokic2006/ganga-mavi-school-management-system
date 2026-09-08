@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview · Admin Dashboard · Ganga Secondary School</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+</head>
+<body class="dashboard-body" data-page="overview">
+
+  <div class="dashboard-shell">
+
+    <div class="sidebar-backdrop" data-sidebar-backdrop></div>
+
+    <!-- ============================================================
+         SIDEBAR
+         ============================================================ -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-mark">GS</div>
+        <div class="sidebar-brand-text">
+          <strong>Ganga Sec. School</strong>
+          <span>Admin Panel</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="sidebar-section-label">Main</span>
+        <a href="index.html" class="sidebar-link">
+          <i class="bi bi-speedometer2"></i><span>Overview</span>
+        </a>
+
+        <span class="sidebar-section-label">People</span>
+        <a href="students.html" class="sidebar-link">
+          <i class="bi bi-people"></i><span>Students</span>
+        </a>
+        <a href="teachers.html" class="sidebar-link">
+          <i class="bi bi-person-workspace"></i><span>Teachers</span>
+        </a>
+        <a href="admissions.html" class="sidebar-link">
+          <i class="bi bi-file-earmark-person"></i><span>Admissions</span>
+          <span class="badge-count">5</span>
+        </a>
+
+        <span class="sidebar-section-label">Academics</span>
+        <a href="attendance.html" class="sidebar-link">
+          <i class="bi bi-calendar2-check"></i><span>Attendance</span>
+        </a>
+        <a href="results.html" class="sidebar-link">
+          <i class="bi bi-bar-chart-line"></i><span>Results</span>
+        </a>
+
+        <span class="sidebar-section-label">Website</span>
+        <a href="news.html" class="sidebar-link">
+          <i class="bi bi-megaphone"></i><span>News &amp; Notices</span>
+        </a>
+
+        <span class="sidebar-section-label">Finance &amp; System</span>
+        <a href="fees.html" class="sidebar-link">
+          <i class="bi bi-cash-coin"></i><span>Fees</span>
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <i class="bi bi-gear"></i><span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar">A</div>
+          <div class="sidebar-user-meta">
+            <strong>Admin User</strong>
+            <span>administrator</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         MAIN
+         ============================================================ -->
+    <div class="dashboard-main">
+
+      <header class="dashboard-topbar">
+        <button class="topbar-toggle d-none d-lg-flex" data-sidebar-collapse aria-label="Collapse sidebar">
+          <i class="bi bi-layout-sidebar"></i>
+        </button>
+        <button class="topbar-toggle d-lg-none" data-sidebar-mobile-toggle aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="topbar-search">
+          <i class="bi bi-search"></i>
+          <input type="search" placeholder="Search students, teachers, results…" aria-label="Search" />
+        </div>
+
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="dot"></span>
+          </button>
+          <a href="../../pages/index.html" class="topbar-icon-btn" aria-label="View public site">
+            <i class="bi bi-globe2"></i>
+          </a>
+          <div class="topbar-profile">
+            <div class="topbar-profile-avatar">A</div>
+            <div class="topbar-profile-meta">
+              <strong>Admin User</strong>
+              <span>Administrator</span>
+            </div>
+            <i class="bi bi-chevron-down" style="font-size:.7rem;color:var(--text-muted);"></i>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+
+        <div class="page-header">
+          <div>
+            <span class="eyebrow">Dashboard</span>
+            <h1>Good to see you, Admin 👋</h1>
+            <p>Here's what's happening at Ganga Secondary School today.</p>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="results.html" class="btn-dash btn-dash-outline">
+              <i class="bi bi-plus-lg"></i> Publish result
+            </a>
+            <a href="news.html" class="btn-dash btn-dash-primary">
+              <i class="bi bi-plus-lg"></i> Post news
+            </a>
+          </div>
+        </div>
+
+        <!-- STAT CARDS -->
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon navy"><i class="bi bi-people-fill"></i></div>
+              <span class="stat-trend up"><i class="bi bi-arrow-up-short"></i>3.2%</span>
+            </div>
+            <div>
+              <div class="stat-value">842</div>
+              <div class="stat-label">Total students</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon gold"><i class="bi bi-person-workspace"></i></div>
+              <span class="stat-trend flat">No change</span>
+            </div>
+            <div>
+              <div class="stat-value">46</div>
+              <div class="stat-label">Teaching staff</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon green"><i class="bi bi-cash-coin"></i></div>
+              <span class="stat-trend up"><i class="bi bi-arrow-up-short"></i>8.1%</span>
+            </div>
+            <div>
+              <div class="stat-value">Rs 12.4L</div>
+              <div class="stat-label">Fees collected (this term)</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon red"><i class="bi bi-file-earmark-person"></i></div>
+              <span class="stat-trend down"><i class="bi bi-arrow-down-short"></i>2 new</span>
+            </div>
+            <div>
+              <div class="stat-value">5</div>
+              <div class="stat-label">Pending admissions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- RECENT RESULTS -->
+          <div class="col-12 col-xl-7">
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h2>Recently published results</h2>
+                  <p>Latest exam results pushed to the student portal</p>
+                </div>
+                <a href="results.html" class="btn-dash btn-dash-outline btn-dash-sm">
+                  View all <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <div class="panel-body no-pad">
+                <div class="table-responsive-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Student</th>
+                        <th>Class</th>
+                        <th>Exam</th>
+                        <th>Percentage</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="table-avatar">SP</span><span class="cell-primary">Sujata Poudel</span></td>
+                        <td>Class 10 - A</td>
+                        <td>First Terminal 2082</td>
+                        <td class="cell-primary">91.4%</td>
+                        <td><span class="status-pill success">Pass</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="table-avatar">RT</span><span class="cell-primary">Ramesh Thapa</span></td>
+                        <td>Class 9 - B</td>
+                        <td>First Terminal 2082</td>
+                        <td class="cell-primary">76.8%</td>
+                        <td><span class="status-pill success">Pass</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="table-avatar">AK</span><span class="cell-primary">Anita K.C.</span></td>
+                        <td>Class 8 - A</td>
+                        <td>First Terminal 2082</td>
+                        <td class="cell-primary">38.2%</td>
+                        <td><span class="status-pill danger">Fail</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="table-avatar">BS</span><span class="cell-primary">Bikash Shrestha</span></td>
+                        <td>Class 10 - A</td>
+                        <td>First Terminal 2082</td>
+                        <td class="cell-primary">84.0%</td>
+                        <td><span class="status-pill success">Pass</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUICK ACTIONS + NEWS -->
+          <div class="col-12 col-xl-5">
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h2>Quick actions</h2>
+                </div>
+              </div>
+              <div class="panel-body d-flex flex-column gap-2">
+                <a href="students.html" class="btn-dash btn-dash-outline justify-content-start">
+                  <i class="bi bi-person-plus"></i> Add a new student
+                </a>
+                <a href="teachers.html" class="btn-dash btn-dash-outline justify-content-start">
+                  <i class="bi bi-person-badge"></i> Add teaching staff
+                </a>
+                <a href="attendance.html" class="btn-dash btn-dash-outline justify-content-start">
+                  <i class="bi bi-calendar2-check"></i> Mark today's attendance
+                </a>
+                <a href="admissions.html" class="btn-dash btn-dash-outline justify-content-start">
+                  <i class="bi bi-inbox"></i> Review admission applications
+                </a>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h2>Latest notices</h2>
+                </div>
+                <a href="news.html" class="btn-dash btn-dash-outline btn-dash-sm">Manage</a>
+              </div>
+              <div class="panel-body d-flex flex-column gap-3">
+                <div class="d-flex gap-3">
+                  <div class="stat-icon navy" style="width:38px;height:38px;flex-shrink:0;"><i class="bi bi-megaphone" style="font-size:.9rem;"></i></div>
+                  <div>
+                    <div class="cell-primary" style="font-size:.87rem;">Dashain vacation notice published</div>
+                    <div class="cell-muted">2 days ago</div>
+                  </div>
+                </div>
+                <div class="d-flex gap-3">
+                  <div class="stat-icon gold" style="width:38px;height:38px;flex-shrink:0;"><i class="bi bi-trophy" style="font-size:.9rem;"></i></div>
+                  <div>
+                    <div class="cell-primary" style="font-size:.87rem;">Inter-school science fair results announced</div>
+                    <div class="cell-muted">5 days ago</div>
+                  </div>
+                </div>
+                <div class="d-flex gap-3">
+                  <div class="stat-icon green" style="width:38px;height:38px;flex-shrink:0;"><i class="bi bi-calendar-event" style="font-size:.9rem;"></i></div>
+                  <div>
+                    <div class="cell-primary" style="font-size:.87rem;">Parent-teacher meeting scheduled</div>
+                    <div class="cell-muted">1 week ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

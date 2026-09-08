@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Runtime uploads / generated data
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Local databases / dumps
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build / cache
+coverage/
+.cache/
+dist/
+
+# Temporary files
+*.tmp
+*.temp

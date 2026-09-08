@@ -1,0 +1,2275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- =========================================================
+         GANGA SECONDARY SCHOOL
+         PROFESSIONAL ACADEMICS PAGE
+         File: frontend/pages/academics.html
+         ========================================================= -->
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="Explore academics, learning programs, teaching approach, student support and academic resources at Ganga Secondary School, Rampur, Ghorahi-2, Dang, Nepal." />
+
+  <meta name="keywords"
+    content="Ganga Secondary School Academics, School Academics Nepal, Ganga School Rampur, Ghorahi Dang School" />
+
+  <meta name="author" content="Ganga Secondary School" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0F4C81" />
+
+  <title>Academics | Ganga Secondary School</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../assets/images/school.ico" />
+
+  <!-- =========================================================
+       GOOGLE FONTS
+       ========================================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- =========================================================
+       BOOTSTRAP
+       ========================================================= -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- =========================================================
+       EXISTING PROJECT CSS
+       (The duplicate second <link> to style.css that used to sit
+       under a separate "ACADEMICS PAGE CSS" comment has been
+       removed — it pointed at the exact same file as this one.)
+       ========================================================= -->
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/animation.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+
+  <!-- =========================================================
+       ACADEMICS PAGE STYLES
+       Scoped to body.academics-page only — nothing here touches
+       any other page, the global stylesheet, or shared classes
+       used elsewhere (e.g. .site-footer keeps its own site-wide
+       look; only the two small compact tweaks below are scoped
+       under body.academics-page).
+       ========================================================= -->
+
+  <style>
+    :root {
+      --academic-primary: #0F4C81;
+      --academic-primary-dark: #0b3a63;
+      --academic-accent: #1d74d8;
+      --academic-text: #263746;
+      --academic-muted: #66798c;
+      --academic-border: #e7edf3;
+      --academic-soft: #f5f8fc;
+      --academic-radius: 18px;
+      --academic-shadow: 0 14px 40px rgba(15, 76, 129, 0.10);
+    }
+
+    body.academics-page {
+      color: var(--academic-text);
+    }
+
+    body.academics-page *,
+    body.academics-page *::before,
+    body.academics-page *::after {
+      box-sizing: border-box;
+    }
+
+    body.academics-page .container {
+      max-width: 1180px;
+    }
+
+    body.academics-page main {
+      overflow-x: hidden;
+    }
+
+    /* ---------- SLIMMER NAVBAR (Academics only) ---------- */
+    body.academics-page .site-header .navbar {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    body.academics-page .school-logo-image {
+      height:70px;
+      width: auto;
+      max-width: 190px;
+      object-fit: contain;
+    }
+
+    body.academics-page .school-nav-link {
+      font-size: 0.92rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ---------- SHARED SECTION RHYTHM ---------- */
+    body.academics-page .academic-section {
+      padding: clamp(3rem, 6vw, 5.25rem) 0;
+    }
+
+    body.academics-page .academic-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--academic-accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    body.academics-page .academic-section-label span {
+      display: inline-block;
+      width: 26px;
+      height: 2px;
+      background: var(--academic-accent);
+      border-radius: 2px;
+    }
+
+    body.academics-page .academic-section-title {
+      color: var(--academic-primary-dark);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.22;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    body.academics-page .academic-section-title span {
+      color: var(--academic-accent);
+    }
+
+    body.academics-page .academic-lead {
+      color: var(--academic-text);
+      font-size: 1.03rem;
+      font-weight: 600;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    body.academics-page .academic-text {
+      color: var(--academic-muted);
+      font-size: 0.96rem;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    body.academics-page .academic-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    body.academics-page .academic-btn-primary {
+      background: var(--academic-primary);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(15, 76, 129, 0.22);
+    }
+
+    body.academics-page .academic-btn-primary:hover {
+      background: var(--academic-primary-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    body.academics-page .academic-btn-outline {
+      background: #fff;
+      color: var(--academic-primary);
+      border: 1.5px solid var(--academic-border);
+    }
+
+    body.academics-page .academic-btn-outline:hover {
+      border-color: var(--academic-primary);
+      color: var(--academic-primary-dark);
+      transform: translateY(-2px);
+    }
+
+    body.academics-page .academic-btn-blue {
+      background: var(--academic-primary);
+      color: #fff;
+    }
+
+    body.academics-page .academic-btn-blue:hover {
+      background: var(--academic-primary-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    body.academics-page .academic-simple-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--academic-primary);
+      font-weight: 700;
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    body.academics-page .academic-simple-link:hover {
+      color: var(--academic-primary-dark);
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    body.academics-page .academic-hero {
+      position: relative;
+      padding: 44px 0 clamp(2.75rem, 6vw, 4.5rem);
+      background:
+        radial-gradient(circle at 88% 10%, rgba(29, 116, 216, .13), transparent 32%),
+        linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--academic-border);
+      overflow: hidden;
+    }
+
+    body.academics-page .academic-hero-pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body.academics-page .academic-hero-pattern::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -90px;
+      bottom: -110px;
+      border-radius: 50%;
+      background: rgba(29, 116, 216, .07);
+    }
+
+    body.academics-page .academic-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--academic-muted);
+    }
+
+    body.academics-page .academic-breadcrumb a {
+      color: var(--academic-primary);
+      text-decoration: none;
+    }
+
+    body.academics-page .academic-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    body.academics-page .academic-breadcrumb i {
+      font-size: 0.7rem;
+      opacity: 0.6;
+    }
+
+    body.academics-page .academic-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #eaf3ff;
+      border: 1px solid #d6e8fb;
+      color: var(--academic-accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    body.academics-page .academic-eyebrow-line {
+      width: 18px;
+      height: 2px;
+      background: var(--academic-accent);
+      border-radius: 2px;
+    }
+
+    body.academics-page .academic-hero-title {
+      color: var(--academic-primary-dark);
+      font-size: clamp(2rem, 4.4vw, 3.1rem);
+      line-height: 1.14;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    body.academics-page .academic-hero-title span {
+      color: var(--academic-accent);
+    }
+
+    body.academics-page .academic-hero-description {
+      max-width: 560px;
+      color: var(--academic-muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    body.academics-page .academic-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    body.academics-page .academic-hero-visual {
+      position: relative;
+    }
+
+    body.academics-page .academic-hero-image-box {
+      border-radius: 22px;
+      padding: 10px;
+      background: #f3f7fb;
+      border: 1px solid var(--academic-border);
+      box-shadow: var(--academic-shadow);
+    }
+
+    body.academics-page .academic-hero-image {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    body.academics-page .academic-floating-card {
+      position: absolute;
+      left: -18px;
+      bottom: -18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--academic-border);
+      box-shadow: var(--academic-shadow);
+      max-width: 260px;
+    }
+
+    body.academics-page .academic-floating-icon {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--academic-primary);
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    body.academics-page .academic-floating-card strong {
+      display: block;
+      color: var(--academic-primary-dark);
+      font-size: 0.9rem;
+    }
+
+    body.academics-page .academic-floating-card small {
+      display: block;
+      color: var(--academic-muted);
+      font-size: 0.78rem;
+    }
+
+    /* =========================================================
+       QUICK NAVIGATION
+       ========================================================= */
+    body.academics-page .academic-quick-section {
+      padding: 26px 0;
+      background: var(--academic-soft);
+      border-bottom: 1px solid var(--academic-border);
+    }
+
+    body.academics-page .academic-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    body.academics-page .academic-quick-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #fff;
+      border: 1px solid var(--academic-border);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--academic-text);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    body.academics-page .academic-quick-card:hover,
+    body.academics-page .academic-quick-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(15, 76, 129, 0.12);
+      border-color: #cfe1f3;
+    }
+
+    body.academics-page .academic-quick-icon {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eaf3ff;
+      color: var(--academic-primary);
+      font-size: 1.15rem;
+    }
+
+    body.academics-page .academic-quick-card strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 750;
+      color: var(--academic-primary-dark);
+    }
+
+    body.academics-page .academic-quick-card small {
+      display: block;
+      color: var(--academic-muted);
+      font-size: 0.78rem;
+    }
+
+    /* =========================================================
+       INTRODUCTION
+       ========================================================= */
+    body.academics-page .academic-check-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    body.academics-page .academic-check-list>div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border: 1px solid var(--academic-border);
+      border-radius: 12px;
+      background: #fff;
+      color: #435667;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    body.academics-page .academic-check-list span {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #eaf3ff;
+      color: var(--academic-accent);
+      font-size: 0.78rem;
+    }
+
+    body.academics-page .academic-intro-visual {
+      position: relative;
+    }
+
+    body.academics-page .academic-intro-visual img {
+      display: block;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: var(--academic-radius);
+      border: 1px solid var(--academic-border);
+      box-shadow: var(--academic-shadow);
+    }
+
+    body.academics-page .academic-intro-badge {
+      position: absolute;
+      right: -14px;
+      bottom: -14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: var(--academic-primary);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(15, 76, 129, 0.28);
+      max-width: 220px;
+    }
+
+    body.academics-page .academic-intro-badge i {
+      font-size: 1.2rem;
+    }
+
+    body.academics-page .academic-intro-badge strong {
+      display: block;
+      font-size: 0.86rem;
+    }
+
+    body.academics-page .academic-intro-badge small {
+      display: block;
+      font-size: 0.76rem;
+      opacity: 0.85;
+    }
+
+    /* =========================================================
+       ACADEMIC PROGRAM CARDS
+       ========================================================= */
+    body.academics-page .academic-heading-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    body.academics-page .academic-heading-row p {
+      max-width: 380px;
+      margin: 0;
+      color: var(--academic-muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    body.academics-page .academic-program-card {
+      position: relative;
+      height: 100%;
+      padding: 30px 26px 26px;
+      background: #fff;
+      border: 1px solid var(--academic-border);
+      border-radius: var(--academic-radius);
+      box-shadow: 0 8px 26px rgba(15, 76, 129, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    body.academics-page .academic-program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--academic-shadow);
+      border-color: #cfe1f3;
+    }
+
+    body.academics-page .academic-card-number {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--academic-border);
+    }
+
+    body.academics-page .academic-program-icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      background: #eaf3ff;
+      color: var(--academic-primary);
+      font-size: 1.4rem;
+    }
+
+    body.academics-page .academic-program-card h3 {
+      margin: 0 0 10px;
+      color: var(--academic-primary-dark);
+      font-size: 1.08rem;
+      font-weight: 750;
+    }
+
+    body.academics-page .academic-program-card p {
+      margin: 0 0 18px;
+      color: var(--academic-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    body.academics-page .academic-program-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--academic-primary);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    body.academics-page .academic-program-card a:hover {
+      color: var(--academic-primary-dark);
+      text-decoration: underline;
+    }
+
+    body.academics-page .academic-program-dark {
+      background: linear-gradient(150deg, var(--academic-primary-dark), var(--academic-primary));
+      border-color: transparent;
+    }
+
+    body.academics-page .academic-program-dark .academic-card-number {
+      color: rgba(255, 255, 255, 0.18);
+    }
+
+    body.academics-page .academic-program-dark .academic-program-icon {
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    body.academics-page .academic-program-dark h3 {
+      color: #fff;
+    }
+
+    body.academics-page .academic-program-dark p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    body.academics-page .academic-program-dark a {
+      color: #fff;
+    }
+
+    body.academics-page .academic-program-dark a:hover {
+      color: #eaf3ff;
+    }
+
+    /* =========================================================
+       LEARNING APPROACH
+       ========================================================= */
+    body.academics-page .academic-approach {
+      background: var(--academic-soft);
+    }
+
+    body.academics-page .academic-approach-image {
+      position: relative;
+    }
+
+    body.academics-page .academic-approach-image img {
+      display: block;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: var(--academic-radius);
+      border: 1px solid var(--academic-border);
+      box-shadow: var(--academic-shadow);
+    }
+
+    body.academics-page .academic-image-tag {
+      position: absolute;
+      left: -14px;
+      top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--academic-border);
+      box-shadow: var(--academic-shadow);
+    }
+
+    body.academics-page .academic-image-tag i {
+      color: var(--academic-accent);
+      font-size: 1.1rem;
+    }
+
+    body.academics-page .academic-image-tag strong {
+      display: block;
+      font-size: 0.86rem;
+      color: var(--academic-primary-dark);
+    }
+
+    body.academics-page .academic-image-tag small {
+      display: block;
+      font-size: 0.76rem;
+      color: var(--academic-muted);
+    }
+
+    body.academics-page .academic-principles {
+      display: grid;
+      gap: 16px;
+      margin: 26px 0 30px;
+    }
+
+    body.academics-page .academic-principle {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    body.academics-page .academic-principle>span {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: #eaf3ff;
+      color: var(--academic-accent);
+      font-size: 0.9rem;
+    }
+
+    body.academics-page .academic-principle h3 {
+      margin: 0 0 4px;
+      color: var(--academic-primary-dark);
+      font-size: 0.98rem;
+      font-weight: 750;
+    }
+
+    body.academics-page .academic-principle p {
+      margin: 0;
+      color: var(--academic-muted);
+      font-size: 0.89rem;
+      line-height: 1.6;
+    }
+
+    body.academics-page .academic-approach-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* =========================================================
+       STUDENT SUPPORT
+       ========================================================= */
+    body.academics-page .academic-support-heading {
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    body.academics-page .academic-support-heading p {
+      color: var(--academic-muted);
+      margin: 0;
+    }
+
+    body.academics-page .academic-support-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 26px 22px;
+      background: #fff;
+      border: 1px solid var(--academic-border);
+      border-radius: var(--academic-radius);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 7px 22px rgba(15, 76, 129, 0.055);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    body.academics-page .academic-support-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--academic-shadow);
+      border-color: #cfe1f3;
+    }
+
+    body.academics-page .academic-support-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 16px;
+      border-radius: 13px;
+      background: #eaf3ff;
+      color: var(--academic-primary);
+      font-size: 1.25rem;
+    }
+
+    body.academics-page .academic-support-card h3 {
+      margin: 0 0 8px;
+      color: var(--academic-primary-dark);
+      font-size: 1rem;
+      font-weight: 750;
+    }
+
+    body.academics-page .academic-support-card p {
+      margin: 0;
+      flex-grow: 1;
+      color: var(--academic-muted);
+      font-size: 0.87rem;
+      line-height: 1.6;
+    }
+
+    body.academics-page .academic-support-arrow {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-top: 16px;
+      border-radius: 50%;
+      background: var(--academic-soft);
+      color: var(--academic-primary);
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    body.academics-page .academic-support-card:hover .academic-support-arrow {
+      background: var(--academic-primary);
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    /* =========================================================
+       FINAL CTA
+       ========================================================= */
+    body.academics-page .academic-cta {
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+    }
+
+    body.academics-page .academic-cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: clamp(28px, 4vw, 44px);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--academic-primary-dark), var(--academic-primary));
+      color: #fff;
+    }
+
+    body.academics-page .academic-cta-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    body.academics-page .academic-cta-box h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.4rem, 2.6vw, 2rem);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    body.academics-page .academic-cta-box h2 span {
+      color: #cfe1f3;
+    }
+
+    body.academics-page .academic-cta-box p {
+      max-width: 480px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    body.academics-page .academic-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      flex: 0 0 auto;
+    }
+
+    body.academics-page .academic-cta-actions .academic-btn-outline {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+    }
+
+    body.academics-page .academic-cta-actions .academic-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #fff;
+      color: #fff;
+    }
+
+    body.academics-page .academic-cta-actions .academic-btn-primary {
+      background: #fff;
+      color: var(--academic-primary-dark);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    body.academics-page .academic-cta-actions .academic-btn-primary:hover {
+      background: #eaf3ff;
+      color: var(--academic-primary-dark);
+    }
+
+    /* =========================================================
+       COMPACT SHARED FOOTER — visual tweak only, this page only
+       ========================================================= */
+    body.academics-page~.site-footer .site-footer-main,
+    body.academics-page .site-footer .site-footer-main {
+      padding-top: 44px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 991.98px) {
+      body.academics-page .academic-hero-image {
+        height: 300px;
+      }
+
+      body.academics-page .academic-quick-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body.academics-page .academic-intro-visual img,
+      body.academics-page .academic-approach-image img {
+        height: 300px;
+      }
+
+      body.academics-page .academic-heading-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      body.academics-page .academic-heading-row p {
+        max-width: none;
+      }
+
+      body.academics-page .academic-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      body.academics-page .academic-hero {
+        padding-top: 34px;
+      }
+
+      body.academics-page .academic-floating-card {
+        left: 10px;
+        bottom: -16px;
+        max-width: calc(100% - 20px);
+      }
+
+      body.academics-page .academic-quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body.academics-page .academic-intro-badge {
+        right: 10px;
+        bottom: -14px;
+      }
+
+      body.academics-page .academic-image-tag {
+        left: 10px;
+        top: 14px;
+      }
+
+      body.academics-page .academic-cta-actions {
+        width: 100%;
+      }
+
+      body.academics-page .academic-cta-actions .academic-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      body.academics-page .academic-hero-image {
+        height: 230px;
+      }
+
+      body.academics-page .academic-intro-visual img,
+      body.academics-page .academic-approach-image img {
+        height: 230px;
+      }
+
+      body.academics-page .academic-program-card {
+        padding: 24px 20px 20px;
+      }
+
+      body.academics-page .academic-cta-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body class="academics-page">
+
+  <!-- =========================================================
+       SHARED LOADER
+       ========================================================= -->
+
+  <div id="loader-container"></div>
+
+  <!-- =========================================================
+       GANGA SECONDARY SCHOOL
+       TOP INFORMATION BAR + SHARED NAVIGATION BAR
+       ---------------------------------------------------------
+       NOTE: the original file had `<div id="navbar-container">`
+       here — an empty placeholder with no topbar and no
+       announcement bar at all, relying entirely on a JS component
+       loader whose behavior could not be verified from this page
+       alone. Every other page in this project (Home, Team,
+       Contact, Administration) uses the real, working, hardcoded
+       topbar + navbar + announcement markup instead, so — to
+       reliably satisfy "navbar must visually and functionally
+       match Home" and "Academics must show as the active page" —
+       that same canonical markup is used here too, with the
+       Academics link marked active and the navbar sized slightly
+       smaller (see the scoped CSS above). No other page's file
+       was touched to do this.
+       ========================================================= -->
+
+  <div class="site-topbar" aria-label="School contact information">
+    <div class="container">
+      <div class="site-topbar-inner">
+        <div class="site-topbar-info">
+          <span class="site-topbar-item">
+            <i class="bi bi-clock" aria-hidden="true"></i>
+            <span>School Hours: Sun – Fri, 10:00 AM – 4:00 PM</span>
+          </span>
+
+          <span class="site-topbar-item">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <a href="mailto:info@gangaschool.edu.np">info@gangaschool.edu.np</a>
+          </span>
+
+          <span class="site-topbar-item">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            <a href="tel:+977XXXXXXXXXX">+977-XXXXXXXXXX</a>
+          </span>
+        </div>
+
+        <!-- Language switcher: EN / NP -->
+        <div class="language-switcher" aria-label="Choose site language">
+          <i class="bi bi-translate" aria-hidden="true"></i>
+
+          <button type="button" class="language-switcher-btn is-active" data-lang="en" aria-pressed="true">
+            EN
+          </button>
+
+          <span class="language-switcher-divider" aria-hidden="true">|</span>
+
+          <button type="button" class="language-switcher-btn" data-lang="np" aria-pressed="false">
+            नेपाली
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg school-navbar" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand school-brand" href="index.html" aria-label="Ganga Secondary School Home">
+          <span class="school-logo">
+            <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" class="school-logo-image" />
+          </span>
+
+          <span class="school-brand-text">
+            <span class="school-name"> Ganga Secondary School </span>
+            <span class="school-location"> Nepal </span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler school-navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#schoolMainNavigation" aria-controls="schoolMainNavigation" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="schoolMainNavigation">
+          <ul class="navbar-nav ms-auto align-items-lg-center school-nav-list">
+            <li class="nav-item school-search-item">
+              <button type="button" class="school-search-button" aria-label="Open search" title="Search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </button>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                About
+              </a>
+
+              <ul class="dropdown-menu school-dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="about.html">
+                    About School
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="principal.html">
+                    Principal's Message
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="administration.html">
+                    Administration
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link active" href="academics.html" aria-current="page">
+                Academics
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="admissions.html">
+                Admissions
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="student-life.html">
+                Student Life
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="team.html">
+                Team
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                More
+              </a>
+
+              <ul class="dropdown-menu school-dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="news.html"> News </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="events.html"> Events </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="gallery.html"> Gallery </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="downloads.html">
+                    Downloads
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="result.html"> Results </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="faculty.html">
+                Faculty
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link school-nav-link" href="contact.html">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       SCHOOL ANNOUNCEMENT BAR
+       (present on Home/Team/Contact/Administration — added here
+       for the same reason as the navbar above, and per the site-
+       wide navigation task, this bar is expected on every page.)
+       ========================================================= -->
+
+  <section class="school-announcement" aria-label="School announcements">
+    <div class="container-fluid px-0">
+      <div class="announcement-inner">
+        <div class="announcement-label">
+          <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+          <span>Notice </span>
+        </div>
+
+        <div class="announcement-marquee" aria-live="polite">
+          <div class="announcement-track">
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+              </span>
+              <span> Admission Open for Academic Session 2083 </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+              </span>
+              <span>School Annual Program and Events </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              </span>
+              <span> Important School Notice for Students and Parents </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item">
+              <span class="announcement-item-icon">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+              </span>
+              <span> Academic Updates and Examination Information </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+              </span>
+              <span> Admission Open for Academic Session 2083 </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+              </span>
+              <span> School Annual Program and Events </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              </span>
+              <span> Important School Notice for Students and Parents </span>
+            </a>
+
+            <span class="announcement-separator" aria-hidden="true"> • </span>
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+              <span class="announcement-item-icon">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+              </span>
+              <span> Academic Updates and Examination Information </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+
+  <main>
+
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+
+    <section class="academic-hero" aria-labelledby="academic-hero-title">
+      <div class="academic-hero-pattern" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <!-- Hero Content -->
+          <div class="col-lg-7">
+
+            <nav class="academic-breadcrumb" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+
+              <span aria-current="page">
+                Academics
+              </span>
+            </nav>
+
+            <span class="academic-eyebrow">
+              <span class="academic-eyebrow-line"></span>
+              Academic Excellence
+            </span>
+
+            <h1 class="academic-hero-title" id="academic-hero-title">
+              Building Knowledge.
+              <span>Shaping Futures.</span>
+            </h1>
+
+            <p class="academic-hero-description">
+              At Ganga Secondary School, we believe education should
+              develop knowledge, confidence, creativity, discipline
+              and responsible citizenship.
+            </p>
+
+            <div class="academic-hero-actions">
+
+              <a href="#academic-programs" class="academic-btn academic-btn-primary">
+                <span>Explore Academics</span>
+
+                <i class="bi bi-arrow-down" aria-hidden="true"></i>
+              </a>
+
+              <a href="result.html" class="academic-btn academic-btn-outline">
+                <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+
+                <span>View Results</span>
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Hero Image -->
+          <div class="col-lg-5">
+
+            <div class="academic-hero-visual">
+
+              <div class="academic-hero-image-box">
+
+                <img src="../assets/images/banner1.png" alt="Academic learning environment at Ganga Secondary School"
+                  class="academic-hero-image" />
+
+              </div>
+
+              <div class="academic-floating-card">
+
+                <span class="academic-floating-icon">
+                  <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+                </span>
+
+                <span>
+                  <strong>Learn • Grow • Lead</strong>
+                  <small>Education with purpose</small>
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         QUICK NAVIGATION
+         ======================================================= -->
+
+    <section class="academic-quick-section" aria-label="Academic navigation">
+
+      <div class="container">
+
+        <div class="academic-quick-grid">
+
+          <a href="#academic-programs" class="academic-quick-card">
+            <span class="academic-quick-icon">
+              <i class="bi bi-book-half"></i>
+            </span>
+
+            <span>
+              <strong>Programs</strong>
+              <small>Learning areas</small>
+            </span>
+          </a>
+
+          <a href="#learning-approach" class="academic-quick-card">
+            <span class="academic-quick-icon">
+              <i class="bi bi-lightbulb-fill"></i>
+            </span>
+
+            <span>
+              <strong>Learning Approach</strong>
+              <small>How we teach</small>
+            </span>
+          </a>
+
+          <a href="#student-support" class="academic-quick-card">
+            <span class="academic-quick-icon">
+              <i class="bi bi-people-fill"></i>
+            </span>
+
+            <span>
+              <strong>Student Support</strong>
+              <small>Guidance & growth</small>
+            </span>
+          </a>
+
+          <a href="result.html" class="academic-quick-card">
+            <span class="academic-quick-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </span>
+
+            <span>
+              <strong>Results</strong>
+              <small>Academic performance</small>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         INTRODUCTION
+         ======================================================= -->
+
+    <section class="academic-introduction academic-section" aria-labelledby="academic-introduction-title">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-6">
+
+            <span class="academic-section-label">
+              <span></span>
+              Our Academic Philosophy
+            </span>
+
+            <h2 class="academic-section-title" id="academic-introduction-title">
+              Education Beyond
+              <span>Memorization.</span>
+            </h2>
+
+            <p class="academic-lead">
+              We aim to create an environment where students
+              understand concepts, ask questions, develop confidence
+              and apply what they learn.
+            </p>
+
+            <p class="academic-text">
+              Academic learning at Ganga Secondary School combines
+              structured classroom learning with practical activities,
+              creativity, collaboration and continuous improvement.
+              Our goal is to help learners become capable,
+              responsible and confident individuals.
+            </p>
+
+            <div class="academic-check-list">
+
+              <div>
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+                Student-centered learning
+              </div>
+
+              <div>
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+                Strong academic foundation
+              </div>
+
+              <div>
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+                Practical learning experiences
+              </div>
+
+              <div>
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+                Character and leadership development
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-6">
+
+            <div class="academic-intro-visual">
+
+              <img src="../assets/images/facilities/library.png" alt="Ganga Secondary School library" loading="lazy" />
+
+              <div class="academic-intro-badge">
+
+                <i class="bi bi-stars" aria-hidden="true"></i>
+
+                <div>
+                  <strong>Learning Beyond</strong>
+                  <small>The Classroom</small>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         ACADEMIC PROGRAMS
+         ======================================================= -->
+
+    <section class="academic-programs academic-section" id="academic-programs"
+      aria-labelledby="academic-programs-title">
+
+      <div class="container">
+
+        <div class="academic-heading-row">
+
+          <div>
+            <span class="academic-section-label">
+              <span></span>
+              Learning Areas
+            </span>
+
+            <h2 class="academic-section-title" id="academic-programs-title">
+              Strong Foundations,
+              <span>Meaningful Learning.</span>
+            </h2>
+          </div>
+
+          <p>
+            Our academic approach encourages students to build
+            knowledge while developing practical skills,
+            creativity and confidence.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-2">
+
+          <!-- Card 01 -->
+          <div class="col-md-6 col-lg-4">
+
+            <article class="academic-program-card">
+
+              <span class="academic-card-number">
+                01
+              </span>
+
+              <span class="academic-program-icon">
+                <i class="bi bi-book-fill"></i>
+              </span>
+
+              <h3>
+                Core Academic Learning
+              </h3>
+
+              <p>
+                Develop strong academic foundations through
+                structured learning, concept building and
+                essential academic skills.
+              </p>
+
+              <a href="#learning-approach">
+                Explore Approach
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </article>
+
+          </div>
+
+
+          <!-- Card 02 -->
+          <div class="col-md-6 col-lg-4">
+
+            <article class="academic-program-card">
+
+              <span class="academic-card-number">
+                02
+              </span>
+
+              <span class="academic-program-icon">
+                <i class="bi bi-flask-fill"></i>
+              </span>
+
+              <h3>
+                Practical & Scientific Learning
+              </h3>
+
+              <p>
+                Encourage curiosity, observation,
+                experimentation and problem-solving through
+                practical learning experiences.
+              </p>
+
+              <a href="student-life.html">
+                Student Activities
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </article>
+
+          </div>
+
+
+          <!-- Card 03 -->
+          <div class="col-md-6 col-lg-4">
+
+            <article class="academic-program-card">
+
+              <span class="academic-card-number">
+                03
+              </span>
+
+              <span class="academic-program-icon">
+                <i class="bi bi-laptop-fill"></i>
+              </span>
+
+              <h3>
+                Technology & Digital Skills
+              </h3>
+
+              <p>
+                Develop digital awareness, creative thinking
+                and practical technology skills for a changing
+                world.
+              </p>
+
+              <a href="student-life.html">
+                Explore Student Life
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </article>
+
+          </div>
+
+
+          <!-- Card 04 -->
+          <div class="col-md-6 col-lg-4">
+
+            <article class="academic-program-card">
+
+              <span class="academic-card-number">
+                04
+              </span>
+
+              <span class="academic-program-icon">
+                <i class="bi bi-palette-fill"></i>
+              </span>
+
+              <h3>
+                Creativity & Expression
+              </h3>
+
+              <p>
+                Encourage students to communicate ideas,
+                explore creativity and express themselves
+                through meaningful activities.
+              </p>
+
+              <a href="student-life.html">
+                Explore Activities
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </article>
+
+          </div>
+
+
+          <!-- Card 05 -->
+          <div class="col-md-6 col-lg-4">
+
+            <article class="academic-program-card">
+
+              <span class="academic-card-number">
+                05
+              </span>
+
+              <span class="academic-program-icon">
+                <i class="bi bi-people-fill"></i>
+              </span>
+
+              <h3>
+                Collaboration & Leadership
+              </h3>
+
+              <p>
+                Build teamwork, communication, responsibility
+                and leadership through collaborative learning
+                and school activities.
+              </p>
+
+              <a href="student-life.html">
+                Student Development
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </article>
+
+          </div>
+
+
+          <!-- Card 06 -->
+          <div class="col-md-6 col-lg-4">
+
+            <article class="academic-program-card academic-program-dark">
+
+              <span class="academic-card-number">
+                06
+              </span>
+
+              <span class="academic-program-icon">
+                <i class="bi bi-trophy-fill"></i>
+              </span>
+
+              <h3>
+                Academic Progress
+              </h3>
+
+              <p>
+                Support continuous improvement through
+                assessment, feedback, guidance and academic
+                progress tracking.
+              </p>
+
+              <a href="result.html">
+                View Results
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         LEARNING APPROACH
+         ======================================================= -->
+
+    <section class="academic-approach academic-section" id="learning-approach"
+      aria-labelledby="learning-approach-title">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-5">
+
+            <div class="academic-approach-image">
+
+              <img src="../assets/images/facilities/library.png" alt="Students learning in the school library"
+                loading="lazy" />
+
+              <div class="academic-image-tag">
+                <i class="bi bi-lightbulb-fill"></i>
+
+                <span>
+                  <strong>Think</strong>
+                  <small>Explore • Create</small>
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-7">
+
+            <span class="academic-section-label">
+              <span></span>
+              How We Learn
+            </span>
+
+            <h2 class="academic-section-title" id="learning-approach-title">
+              Learning that Builds
+              <span>Knowledge & Character.</span>
+            </h2>
+
+            <p class="academic-lead">
+              Effective education should help students understand,
+              apply, communicate and grow — not simply memorize
+              information.
+            </p>
+
+
+            <div class="academic-principles">
+
+              <div class="academic-principle">
+
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+
+                <div>
+                  <h3>Student-Centered Learning</h3>
+                  <p>
+                    Encouraging participation, curiosity and
+                    confidence.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="academic-principle">
+
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+
+                <div>
+                  <h3>Practical Understanding</h3>
+                  <p>
+                    Connecting concepts with activities and
+                    real situations.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="academic-principle">
+
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+
+                <div>
+                  <h3>Continuous Improvement</h3>
+                  <p>
+                    Supporting progress through assessment,
+                    feedback and guidance.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="academic-principle">
+
+                <span>
+                  <i class="bi bi-check-lg"></i>
+                </span>
+
+                <div>
+                  <h3>Character & Responsibility</h3>
+                  <p>
+                    Developing discipline, teamwork and
+                    responsible citizenship.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="academic-approach-actions">
+
+              <a href="faculty.html" class="academic-btn academic-btn-blue">
+                Meet Our Faculty
+                <i class="bi bi-arrow-right"></i>
+              </a>
+
+              <a href="student-life.html" class="academic-simple-link">
+                Student Life
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         STUDENT SUPPORT
+         ======================================================= -->
+
+    <section class="academic-support academic-section" id="student-support" aria-labelledby="student-support-title">
+
+      <div class="container">
+
+        <div class="academic-support-heading text-center">
+
+          <span class="academic-section-label justify-content-center">
+            <span></span>
+            Student Support
+            <span></span>
+          </span>
+
+          <h2 class="academic-section-title" id="student-support-title">
+            Supporting Every
+            <span>Learner's Progress.</span>
+          </h2>
+
+          <p>
+            Students grow stronger when they have guidance,
+            resources and opportunities to review their progress.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4 mt-3">
+
+          <div class="col-md-6 col-lg-3">
+
+            <a href="faculty.html" class="academic-support-card">
+
+              <span class="academic-support-icon">
+                <i class="bi bi-person-check-fill"></i>
+              </span>
+
+              <h3>Teacher Guidance</h3>
+
+              <p>
+                Learn about our faculty and teaching team.
+              </p>
+
+              <span class="academic-support-arrow">
+                <i class="bi bi-arrow-right"></i>
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-3">
+
+            <a href="result.html" class="academic-support-card">
+
+              <span class="academic-support-icon">
+                <i class="bi bi-bar-chart-fill"></i>
+              </span>
+
+              <h3>Academic Results</h3>
+
+              <p>
+                Access academic result and performance
+                information.
+              </p>
+
+              <span class="academic-support-arrow">
+                <i class="bi bi-arrow-right"></i>
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-3">
+
+            <a href="downloads.html" class="academic-support-card">
+
+              <span class="academic-support-icon">
+                <i class="bi bi-download"></i>
+              </span>
+
+              <h3>Academic Resources</h3>
+
+              <p>
+                Find useful documents and downloadable
+                resources.
+              </p>
+
+              <span class="academic-support-arrow">
+                <i class="bi bi-arrow-right"></i>
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-3">
+
+            <a href="events.html" class="academic-support-card">
+
+              <span class="academic-support-icon">
+                <i class="bi bi-calendar-event-fill"></i>
+              </span>
+
+              <h3>Academic Events</h3>
+
+              <p>
+                Explore school programs, activities and events.
+              </p>
+
+              <span class="academic-support-arrow">
+                <i class="bi bi-arrow-right"></i>
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         FINAL CTA
+         ======================================================= -->
+
+    <section class="academic-cta" aria-labelledby="academic-cta-title">
+
+      <div class="container">
+
+        <div class="academic-cta-box">
+
+          <div>
+
+            <span class="academic-cta-label">
+              <i class="bi bi-mortarboard-fill"></i>
+              Explore Ganga
+            </span>
+
+            <h2 id="academic-cta-title">
+              Discover an education
+              <span>built for the future.</span>
+            </h2>
+
+            <p>
+              Explore admissions, student life, faculty,
+              events and other school resources.
+            </p>
+
+          </div>
+
+
+          <div class="academic-cta-actions">
+
+            <a href="admissions.html" class="academic-btn academic-btn-primary">
+              Admissions
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+            <a href="contact.html" class="academic-btn academic-btn-outline">
+              Contact School
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       GANGA SECONDARY SCHOOL — SHARED FOOTER
+       ---------------------------------------------------------
+       NOTE: same reasoning as the navbar above — the original
+       `<div id="footer-container"></div>` placeholder was empty
+       and its JS-driven contents couldn't be verified, which
+       risks an actually-blank footer (failing the "footer is not
+       broken" requirement). Replaced with the real footer markup
+       used by Home/Team/Contact/Administration, content and links
+       unchanged, Contact CTA pointing to contact.html.
+       ========================================================= -->
+
+  <footer class="site-footer">
+    <div class="site-footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-school-column">
+            <div class="footer-school">
+              <a href="index.html" class="footer-brand" aria-label="Ganga Secondary School Home">
+                <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" loading="lazy" />
+                <span>
+                  <strong> Ganga Secondary School </strong>
+                  <small> Nepal </small>
+                </span>
+              </a>
+
+              <p class="footer-description">
+                Committed to quality education, character development and
+                creating confident learners prepared for a changing world.
+              </p>
+
+              <div class="footer-social" aria-label="Social media links">
+                <a href="https://www.facebook.com/profile.php?id=61590301234695" class="social-facebook"
+                  aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@YourSchoolAccount" class="social-youtube" aria-label="YouTube"
+                  title="YouTube" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/YourSchoolAccount/" class="social-instagram" aria-label="Instagram"
+                  title="Instagram" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/977XXXXXXXXXX" class="social-whatsapp" aria-label="WhatsApp" title="WhatsApp"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/YourSchoolAccount/" class="social-linkedin"
+                  aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-links-column">
+            <div class="footer-column">
+              <h2 class="footer-heading">Quick Links</h2>
+              <ul class="footer-links">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="about.html"> About School </a></li>
+                <li><a href="academics.html"> Academics </a></li>
+                <li><a href="admissions.html"> Admissions </a></li>
+                <li><a href="contact.html"> Contact </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-links-column">
+            <div class="footer-column">
+              <h2 class="footer-heading">School</h2>
+              <ul class="footer-links">
+                <li><a href="principal.html"> Principal </a></li>
+                <li><a href="faculty.html"> Faculty </a></li>
+                <li><a href="student-life.html"> Student Life </a></li>
+                <li><a href="events.html"> Events </a></li>
+                <li><a href="gallery.html"> Gallery </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-contact-column">
+            <div class="footer-column">
+              <h2 class="footer-heading">Contact Us</h2>
+              <ul class="footer-contact-list">
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-geo-alt"></i>
+                  </span>
+                  <span> Ganga Secondary School, Nepal </span>
+                </li>
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-telephone"></i>
+                  </span>
+                  <a href="tel:+977XXXXXXXXXX"> +977-XXXXXXXXXX </a>
+                </li>
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+                  <a href="mailto:info@gangaschool.edu.np">
+                    info@gangaschool.edu.np
+                  </a>
+                </li>
+                <li>
+                  <span class="footer-contact-icon">
+                    <i class="bi bi-clock"></i>
+                  </span>
+                  <span> Sun – Fri: 10:00 AM – 4:00 PM </span>
+                </li>
+              </ul>
+
+              <a href="contact.html" class="footer-contact-button">
+                <span> Contact School </span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <p>
+            © <span id="footer-current-year"> 2026 </span>
+            Ganga Secondary School. All rights reserved.
+          </p>
+
+          <div class="footer-legal-links">
+            <a href="#"> Privacy Policy </a>
+            <span aria-hidden="true"> | </span>
+            <a href="#"> developed by Hemant Budhathoki </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../assets/js/components.js" defer></script>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script src="../assets/js/language.js" defer></script>
+
+  <script src="../assets/js/validation.js" defer></script>
+
+  <script src="../assets/js/chatbot.js" defer></script>
+
+</body>
+
+</html>

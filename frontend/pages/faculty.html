@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet the faculty and staff of Ganga Secondary School, dedicated to academic excellence and student development."
+    />
+    <meta
+      name="keywords"
+      content="Ganga Secondary School faculty, teachers, staff, school leadership"
+    />
+    <meta name="theme-color" content="#0F4C81" />
+    <title>Faculty | Ganga Secondary School</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/school.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <style>
+      body { background: #f7f9fc; }
+      .page-hero { padding: 80px 0 36px; background: linear-gradient(180deg, #edf5ff 0%, #ffffff 100%); }
+      .page-kicker { display: inline-flex; align-items: center; width: fit-content; padding: 8px 12px; border-radius: 999px; background: rgba(15,76,129,0.08); color: var(--brand-navy); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      .team-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+      .team-card { background: #fff; border: 1px solid rgba(15,76,129,0.08); border-radius: 24px; padding: 20px; box-shadow: 0 18px 40px rgba(15,76,129,0.05); }
+      .team-avatar { width: 74px; height: 74px; border-radius: 50%; background: linear-gradient(135deg, #0f4c81, #51a8e6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; font-weight: 800; margin-bottom: 18px; }
+      .team-card h3 { margin-bottom: 4px; color: var(--brand-navy-dark); font-size: 1.15rem; }
+      .team-role { color: var(--brand-navy); font-weight: 700; margin-bottom: 8px; }
+      .team-card p { margin: 0; color: var(--text-body); line-height: 1.8; }
+      .faculty-spotlight { background: linear-gradient(135deg, #0f4c81 0%, #2679bb 100%); color: #fff; border-radius: 24px; padding: 28px 30px; }
+      @media (max-width: 767.98px) { .page-hero { padding-top: 62px; } }
+    </style>
+  </head>
+  <body>
+    <div class="site-topbar" aria-label="School contact information">
+      <div class="container">
+        <div class="site-topbar-inner">
+          <div class="site-topbar-info">
+            <span class="site-topbar-item"><i class="bi bi-clock" aria-hidden="true"></i><span>School Hours: Sun – Fri, 10:00 AM – 4:00 PM</span></span>
+            <span class="site-topbar-item"><i class="bi bi-envelope" aria-hidden="true"></i><a href="mailto:info@gangaschool.edu.np">info@gangaschool.edu.np</a></span>
+            <span class="site-topbar-item"><i class="bi bi-telephone" aria-hidden="true"></i><a href="tel:+977XXXXXXXXXX">+977-XXXXXXXXXX</a></span>
+          </div>
+          <div class="language-switcher" aria-label="Choose site language">
+            <i class="bi bi-translate" aria-hidden="true"></i>
+            <button type="button" class="language-switcher-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <span class="language-switcher-divider">|</span>
+            <button type="button" class="language-switcher-btn" data-lang="np" aria-pressed="false">नेपाली</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg school-navbar" aria-label="Main navigation">
+        <div class="container">
+          <a class="navbar-brand school-brand" href="index.html" aria-label="Ganga Secondary School Home">
+            <span class="school-logo"><img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" class="school-logo-image" /></span>
+            <span class="school-brand-text"><span class="school-name">Ganga Secondary School</span><span class="school-location">Nepal</span></span>
+          </a>
+          <button class="navbar-toggler school-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolMainNavigation" aria-controls="schoolMainNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="schoolMainNavigation">
+            <ul class="navbar-nav ms-auto align-items-lg-center school-nav-list">
+              <li class="nav-item school-search-item"><button type="button" class="school-search-button" aria-label="Open search" title="Search"><i class="bi bi-search" aria-hidden="true"></i></button></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="index.html">Home</a></li>
+              <li class="nav-item dropdown"><a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a><ul class="dropdown-menu school-dropdown-menu"><li><a class="dropdown-item" href="about.html">About School</a></li><li><a class="dropdown-item" href="principal.html">Principal's Message</a></li><li><a class="dropdown-item" href="administration.html">Administration</a></li></ul></li>
+              <li class="nav-item"><a class="nav-link school-nav-link active" href="academics.html">Academics</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="admissions.html">Admissions</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="student-life.html">Student Life</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="team.html">Team</a></li>
+              <li class="nav-item dropdown"><a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">News & Media</a><ul class="dropdown-menu school-dropdown-menu"><li><a class="dropdown-item" href="news.html">News & Notices</a></li><li><a class="dropdown-item" href="events.html">Events</a></li><li><a class="dropdown-item" href="downloads.html">Downloads</a></li><li><a class="dropdown-item" href="result.html">Results</a></li></ul></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <span class="page-kicker">Academic Community</span>
+            <h1>Faculty & Staff</h1>
+            <p class="lead">Our teachers and support staff create an encouraging and disciplined learning environment where every student can grow with confidence.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="container">
+          <div class="faculty-spotlight mb-5">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-8">
+                <p class="mb-2 text-white-50 text-uppercase fw-bold">Our Promise</p>
+                <h2 class="mb-3">Thoughtful mentorship backed by excellence in teaching.</h2>
+                <p class="mb-0">The faculty of Ganga Secondary School blends academic rigor with student-centered care, aiming to strengthen both knowledge and character.</p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <div class="badge bg-white text-primary px-3 py-2 rounded-pill fs-6 fw-semibold">30+ Qualified Educators</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar">RS</div>
+              <h3>Rita Sharma</h3>
+              <div class="team-role">Principal</div>
+              <p>Guiding the school with a clear focus on academic excellence, student safety and values-based learning.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar">SK</div>
+              <h3>Suman Karki</h3>
+              <div class="team-role">English Department</div>
+              <p>Encourages confident communication, critical thinking and creativity through language-rich instruction.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar">NP</div>
+              <h3>Nabin Paudel</h3>
+              <div class="team-role">Mathematics</div>
+              <p>Helps students build logical reasoning and problem-solving confidence through structured learning.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar">GT</div>
+              <h3>Gita Thapa</h3>
+              <div class="team-role">Science</div>
+              <p>Motivates inquiry-based learning with strong emphasis on experiments, observation and scientific curiosity.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar">AB</div>
+              <h3>Amrit Bista</h3>
+              <div class="team-role">Social Studies</div>
+              <p>Brings civics, history and geography to life through meaningful discussion and community awareness.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar">DP</div>
+              <h3>Dinesh Pandey</h3>
+              <div class="team-role">Computer & ICT</div>
+              <p>Empowers students with digital literacy, coding awareness and practical technology skills for the future.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer-top row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="footer-brand-block">
+              <div class="footer-brand-mark">G</div>
+              <div>
+                <h3>Ganga Secondary School</h3>
+                <p>Learning, leadership and lifelong values.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-lg-end">
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+          </div>
+        </div>
+        <div class="site-footer-bottom">
+          <p>© <span id="footer-current-year">2026</span> Ganga Secondary School. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/language.js"></script>
+  </body>
+</html>

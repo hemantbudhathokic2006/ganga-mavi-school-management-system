@@ -1,0 +1,1895 @@
+/* ============================================================
+   GANGA SECONDARY SCHOOL
+   ADVANCED RESPONSIVE DESIGN SYSTEM
+   File: assets/css/responsive.css
+
+   Responsive Architecture
+   ------------------------------------------------------------
+   XS      : < 400px
+   SM      : 400px - 575px
+   MD      : 576px - 767px
+   LG      : 768px - 991px
+   XL      : 992px - 1199px
+   XXL     : 1200px - 1599px
+   ULTRA   : 1600px+
+
+   Additional Support
+   ------------------------------------------------------------
+   • Mobile-first scaling
+   • Dynamic viewport units
+   • Safe-area support
+   • Touch devices
+   • Landscape devices
+   • Foldable / unusual aspect ratios
+   • Accessibility
+   • Reduced motion
+   • User zoom levels
+   • Print
+   • High-resolution displays
+   • Horizontal overflow protection
+   ============================================================ */
+
+/* ============================================================
+   00. RESPONSIVE FOUNDATION
+   ============================================================ */
+
+:root {
+  --responsive-gutter: clamp(1rem, 3vw, 2rem);
+
+  --responsive-section-padding: clamp(3.25rem, 7vw, 7rem);
+
+  --responsive-navbar-height: clamp(64px, 7vw, 84px);
+
+  --responsive-radius: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+/* ------------------------------------------------------------
+   GLOBAL OVERFLOW PROTECTION
+   ------------------------------------------------------------ */
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+
+  scroll-padding-top: calc(var(--navbar-height, 76px) + 1rem);
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 280px;
+
+  overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ------------------------------------------------------------
+   MEDIA SAFETY
+   ------------------------------------------------------------ */
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+iframe {
+  border: 0;
+}
+
+/* ------------------------------------------------------------
+   LONG CONTENT SAFETY
+   ------------------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+strong,
+small,
+button,
+label {
+  overflow-wrap: break-word;
+}
+
+pre,
+code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* ============================================================
+   01. LARGE / ULTRA DESKTOP
+   1600px+
+   ============================================================ */
+
+@media (min-width: 1600px) {
+  :root {
+    --section-padding: 7rem;
+    --navbar-height: 84px;
+  }
+
+  .container {
+    width: min(100% - 4rem, 1440px);
+    max-width: 1440px;
+  }
+
+  .hero-slide {
+    min-height: max(680px, calc(100dvh - var(--navbar-height) - 42px));
+
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .hero-content {
+    max-width: 850px;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 5vw, 6rem);
+  }
+
+  .hero-description {
+    max-width: 720px;
+    font-size: 1.15rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+  }
+
+  .facility-card {
+    height: 360px;
+  }
+
+  .gallery-item {
+    height: 300px;
+  }
+}
+
+/* ============================================================
+   02. DESKTOP
+   1200px - 1599px
+   ============================================================ */
+
+@media (min-width: 1200px) {
+  :root {
+    --section-padding: 6rem;
+    --navbar-height: 80px;
+  }
+
+  .container {
+    width: min(100% - 3rem, 1320px);
+    max-width: 1320px;
+  }
+
+  .hero-slide {
+    min-height: max(650px, calc(100dvh - var(--navbar-height) - 42px));
+
+    padding: 6rem 0;
+  }
+
+  .hero-content {
+    max-width: 780px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.2rem, 5vw, 5rem);
+  }
+
+  .hero-description {
+    max-width: 680px;
+  }
+
+  .facility-card {
+    height: 340px;
+  }
+
+  .gallery-item {
+    height: 270px;
+  }
+}
+
+/* ============================================================
+   03. LAPTOP
+   992px - 1199px
+   ============================================================ */
+
+@media (max-width: 1199.98px) {
+  :root {
+    --section-padding: 5rem;
+    --navbar-height: 76px;
+  }
+
+  .container {
+    width: min(100% - 2rem, 960px);
+    max-width: 960px;
+  }
+
+  body {
+    font-size: 0.98rem;
+  }
+
+  /* Hero */
+
+  .hero-slide {
+    min-height: 650px;
+    padding: 6rem 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-description {
+    max-width: 620px;
+  }
+
+  /* Highlights */
+
+  .highlights-section {
+    margin-top: -2rem;
+  }
+
+  /* Welcome */
+
+  .welcome-image {
+    min-height: 430px;
+  }
+
+  /* Facilities */
+
+  .facility-card {
+    height: 330px;
+  }
+
+  /* Video */
+
+  .video-card,
+  .video-content {
+    min-height: 450px;
+  }
+
+  /* CTA */
+
+  .cta-card {
+    padding: var(--space-10);
+  }
+}
+
+/* ============================================================
+   04. TABLET
+   768px - 991px
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+  :root {
+    --section-padding: 4.5rem;
+    --navbar-height: 72px;
+  }
+
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-size: 0.96rem;
+  }
+
+  .container {
+    width: min(100% - 2rem, 720px);
+    max-width: 720px;
+  }
+
+  /* ----------------------------------------------------------
+     Typography
+     ---------------------------------------------------------- */
+
+  h1 {
+    font-size: clamp(2.3rem, 6vw, 3.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+  }
+
+  h3 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+  }
+
+  .section-description {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  /* ----------------------------------------------------------
+     Announcement
+     ---------------------------------------------------------- */
+
+  .announcement-inner {
+    min-height: 40px;
+  }
+
+  .announcement-label {
+    padding: 0.4rem 0.75rem;
+    margin-right: var(--space-3);
+  }
+
+  .announcement-item {
+    max-width: 70vw;
+  }
+
+  /* ----------------------------------------------------------
+     Hero
+     ---------------------------------------------------------- */
+
+  .hero-slide {
+    min-height: 620px;
+    padding: 5rem 0;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(5, 26, 44, 0.88),
+      rgba(8, 43, 73, 0.6)
+    );
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .hero-description {
+    max-width: 580px;
+  }
+
+  .hero-section .carousel-control-prev,
+  .hero-section .carousel-control-next {
+    width: 7%;
+  }
+
+  .hero-section .carousel-control-prev-icon,
+  .hero-section .carousel-control-next-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* ----------------------------------------------------------
+     Highlights
+     ---------------------------------------------------------- */
+
+  .highlights-section {
+    margin-top: 0;
+    padding-top: var(--space-8);
+  }
+
+  .highlight-card {
+    min-height: 90px;
+    padding: var(--space-4);
+  }
+
+  .highlight-icon {
+    flex-basis: 46px;
+    width: 46px;
+    height: 46px;
+  }
+
+  /* ----------------------------------------------------------
+     Welcome
+     ---------------------------------------------------------- */
+
+  .welcome-image-wrapper {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .welcome-image {
+    min-height: 420px;
+  }
+
+  .welcome-image-badge {
+    right: 0;
+  }
+
+  /* ----------------------------------------------------------
+     Principal
+     ---------------------------------------------------------- */
+
+  .principal-image-wrapper {
+    max-width: 380px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: var(--space-8);
+  }
+
+  /* ----------------------------------------------------------
+     Academic
+     ---------------------------------------------------------- */
+
+  .academic-card {
+    padding: var(--space-6);
+  }
+
+  .academic-card p {
+    min-height: auto;
+  }
+
+  /* ----------------------------------------------------------
+     Facilities
+     ---------------------------------------------------------- */
+
+  .facility-card {
+    height: 300px;
+  }
+
+  /* ----------------------------------------------------------
+     News
+     ---------------------------------------------------------- */
+
+  .news-image {
+    height: 200px;
+  }
+
+  /* ----------------------------------------------------------
+     Notice
+     ---------------------------------------------------------- */
+
+  .notice-board {
+    margin-top: var(--space-8);
+  }
+
+  /* ----------------------------------------------------------
+     Video
+     ---------------------------------------------------------- */
+
+  .video-card {
+    min-height: 430px;
+  }
+
+  .video-content {
+    min-height: 430px;
+    padding: var(--space-8);
+  }
+
+  /* ----------------------------------------------------------
+     Gallery
+     ---------------------------------------------------------- */
+
+  .gallery-item {
+    height: 230px;
+  }
+
+  /* ----------------------------------------------------------
+     CTA
+     ---------------------------------------------------------- */
+
+  .cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-8);
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   05. LARGE MOBILE / SMALL TABLET
+   576px - 767px
+   ============================================================ */
+
+@media (max-width: 767.98px) {
+  :root {
+    --section-padding: 4rem;
+    --navbar-height: 68px;
+  }
+
+  /* ----------------------------------------------------------
+     Container
+     ---------------------------------------------------------- */
+
+  .container {
+    width: min(100% - 2rem, 540px);
+    max-width: 540px;
+  }
+
+  /* ----------------------------------------------------------
+     Section
+     ---------------------------------------------------------- */
+
+  .section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  .section-heading {
+    margin-bottom: var(--space-8);
+  }
+
+  /* ----------------------------------------------------------
+     Announcement
+     ---------------------------------------------------------- */
+
+  .announcement-inner {
+    min-height: 38px;
+  }
+
+  .announcement-label {
+    min-height: 38px;
+    font-size: 0.68rem;
+  }
+
+  .announcement-separator {
+    margin: 0 var(--space-4);
+  }
+
+  .announcement-item {
+    max-width: 65vw;
+    font-size: 0.78rem;
+  }
+
+  /* ----------------------------------------------------------
+     Hero
+     ---------------------------------------------------------- */
+
+  .hero-slide {
+    min-height: 570px;
+    padding: 4.5rem 0;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--space-4);
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 9vw, 3.4rem);
+    letter-spacing: -0.04em;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    gap: var(--space-2);
+  }
+
+  .hero-actions .btn {
+    min-height: 46px;
+  }
+
+  .hero-section .carousel-control-prev,
+  .hero-section .carousel-control-next {
+    display: none;
+  }
+
+  .hero-section .carousel-indicators {
+    bottom: 1.25rem;
+  }
+
+  /* ----------------------------------------------------------
+     Highlights
+     ---------------------------------------------------------- */
+
+  .highlights-section {
+    padding-top: var(--space-6);
+  }
+
+  .highlight-card {
+    min-height: 90px;
+    padding: var(--space-4);
+  }
+
+  .highlight-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* ----------------------------------------------------------
+     Welcome
+     ---------------------------------------------------------- */
+
+  .welcome-image-wrapper {
+    padding: 0 0 1rem;
+  }
+
+  .welcome-image-wrapper::after {
+    right: 0;
+    bottom: 0;
+    width: 65%;
+    height: 65%;
+  }
+
+  .welcome-image {
+    min-height: 350px;
+  }
+
+  .welcome-image-badge {
+    right: 0.75rem;
+    bottom: 1.5rem;
+    max-width: 210px;
+  }
+
+  /* ----------------------------------------------------------
+     Principal
+     ---------------------------------------------------------- */
+
+  .principal-image {
+    max-height: 480px;
+  }
+
+  /* ----------------------------------------------------------
+     Academic
+     ---------------------------------------------------------- */
+
+  .academic-card {
+    padding: var(--space-6);
+  }
+
+  /* ----------------------------------------------------------
+     Facilities
+     ---------------------------------------------------------- */
+
+  .facility-card {
+    height: 280px;
+  }
+
+  /* ----------------------------------------------------------
+     News
+     ---------------------------------------------------------- */
+
+  .news-image {
+    height: 220px;
+  }
+
+  /* ----------------------------------------------------------
+     Notice
+     ---------------------------------------------------------- */
+
+  .notice-item {
+    grid-template-columns:
+      48px
+      minmax(0, 1fr)
+      auto;
+  }
+
+  .notice-date {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* ----------------------------------------------------------
+     Video
+     ---------------------------------------------------------- */
+
+  .video-card {
+    min-height: 420px;
+    border-radius: var(--radius-xl);
+  }
+
+  .video-content {
+    min-height: 420px;
+    padding: var(--space-7);
+  }
+
+  .video-content h2 {
+    font-size: 2rem;
+  }
+
+  .video-play-btn {
+    width: 64px;
+    height: 64px;
+    font-size: 1.6rem;
+  }
+
+  /* ----------------------------------------------------------
+     Gallery
+     ---------------------------------------------------------- */
+
+  .gallery-item {
+    height: 240px;
+  }
+
+  /* ----------------------------------------------------------
+     CTA
+     ---------------------------------------------------------- */
+
+  .cta-card {
+    border-radius: var(--radius-xl);
+    padding: var(--space-7);
+  }
+
+  .cta-actions .btn {
+    flex: 1 1 auto;
+  }
+
+  /* ----------------------------------------------------------
+     Back To Top
+     ---------------------------------------------------------- */
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ============================================================
+   06. MOBILE
+   BELOW 576px
+   ============================================================ */
+
+@media (max-width: 575.98px) {
+  :root {
+    --section-padding: 3.5rem;
+    --navbar-height: 64px;
+  }
+
+  /* ----------------------------------------------------------
+     Global
+     ---------------------------------------------------------- */
+
+  body {
+    font-size: 0.94rem;
+  }
+
+  .container {
+    width: calc(100% - 2rem);
+    max-width: none;
+  }
+
+  /* ----------------------------------------------------------
+     Typography
+     ---------------------------------------------------------- */
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    letter-spacing: -0.025em;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ----------------------------------------------------------
+     Section Heading
+     ---------------------------------------------------------- */
+
+  .section-heading {
+    margin-bottom: var(--space-7);
+  }
+
+  .section-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .section-eyebrow::before {
+    width: 22px;
+  }
+
+  /* ----------------------------------------------------------
+     Announcement
+     ---------------------------------------------------------- */
+
+  .announcement-label {
+    padding: 0.35rem 0.65rem;
+    margin-right: var(--space-2);
+    font-size: 0.62rem;
+  }
+
+  .announcement-label i {
+    font-size: 0.65rem;
+  }
+
+  .announcement-item {
+    max-width: 62vw;
+    font-size: 0.72rem;
+  }
+
+  .announcement-separator {
+    margin: 0 var(--space-3);
+  }
+
+  /* ----------------------------------------------------------
+     Hero
+     ---------------------------------------------------------- */
+
+  .hero-slide {
+    min-height: 540px;
+    min-height: max(540px, 80dvh);
+
+    padding: 4rem 0 5rem;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 26, 44, 0.76),
+      rgba(5, 26, 44, 0.9)
+    );
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: var(--space-4);
+    font-size: 0.68rem;
+  }
+
+  .hero-title {
+    margin-bottom: var(--space-4);
+    font-size: clamp(2.1rem, 11vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .hero-description {
+    margin-bottom: var(--space-6);
+    font-size: 0.92rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* ----------------------------------------------------------
+     Highlights
+     ---------------------------------------------------------- */
+
+  .highlights-section {
+    padding-top: var(--space-5);
+  }
+
+  .highlight-card {
+    padding: var(--space-4);
+  }
+
+  .highlight-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .highlight-number {
+    font-size: 1.1rem;
+  }
+
+  .highlight-label {
+    font-size: 0.68rem;
+  }
+
+  /* ----------------------------------------------------------
+     Welcome
+     ---------------------------------------------------------- */
+
+  .welcome-image {
+    min-height: 300px;
+  }
+
+  .welcome-image-badge {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    width: auto;
+    max-width: 100%;
+
+    margin-top: -1.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .welcome-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .welcome-actions .btn {
+    width: 100%;
+  }
+
+  /* ----------------------------------------------------------
+     Principal
+     ---------------------------------------------------------- */
+
+  .principal-image-wrapper {
+    width: min(100%, 310px);
+    max-width: 310px;
+  }
+
+  .principal-image-wrapper::before {
+    top: -0.5rem;
+    left: -0.5rem;
+
+    width: 55px;
+    height: 55px;
+
+    border-width: 3px;
+  }
+
+  /* ----------------------------------------------------------
+     Academic Cards
+     ---------------------------------------------------------- */
+
+  .academic-card {
+    padding: var(--space-5);
+  }
+
+  .academic-card-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: var(--space-5);
+  }
+
+  .academic-card-number {
+    top: var(--space-5);
+    right: var(--space-5);
+
+    font-size: 2.4rem;
+  }
+
+  /* ----------------------------------------------------------
+     Feature Cards
+     ---------------------------------------------------------- */
+
+  .feature-card {
+    padding: var(--space-5);
+  }
+
+  /* ----------------------------------------------------------
+     Facilities
+     ---------------------------------------------------------- */
+
+  .facility-card {
+    height: 250px;
+    border-radius: var(--radius-lg);
+  }
+
+  .facility-overlay {
+    padding: 4rem var(--space-5) var(--space-5);
+  }
+
+  /* ----------------------------------------------------------
+     News
+     ---------------------------------------------------------- */
+
+  .news-image {
+    height: 200px;
+  }
+
+  .news-content {
+    padding: var(--space-5);
+  }
+
+  /* ----------------------------------------------------------
+     Notice Board
+     ---------------------------------------------------------- */
+
+  .notice-board {
+    padding: var(--space-5);
+  }
+
+  .notice-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .notice-item {
+    grid-template-columns:
+      44px
+      minmax(0, 1fr)
+      16px;
+
+    gap: var(--space-2);
+  }
+
+  .notice-date {
+    width: 44px;
+    height: 44px;
+  }
+
+  .notice-content strong {
+    font-size: 0.8rem;
+  }
+
+  .notice-content small {
+    font-size: 0.68rem;
+  }
+
+  /* ----------------------------------------------------------
+     Video
+     ---------------------------------------------------------- */
+
+  .video-card {
+    min-height: 380px;
+  }
+
+  .video-content {
+    min-height: 380px;
+    padding: var(--space-6);
+  }
+
+  .video-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .video-content p {
+    font-size: 0.9rem;
+  }
+
+  .video-play-btn {
+    width: 58px;
+    height: 58px;
+  }
+
+  /* ----------------------------------------------------------
+     Gallery
+     ---------------------------------------------------------- */
+
+  .gallery-item {
+    height: 210px;
+  }
+
+  /* ----------------------------------------------------------
+     CTA
+     ---------------------------------------------------------- */
+
+  .cta-section {
+    padding-top: 1rem;
+  }
+
+  .cta-card {
+    padding: var(--space-6);
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  /* ----------------------------------------------------------
+     Back To Top
+     ---------------------------------------------------------- */
+
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+
+    border-radius: var(--radius-md);
+  }
+}
+
+/* ============================================================
+   07. VERY SMALL PHONES
+   BELOW 400px
+   ============================================================ */
+
+@media (max-width: 399.98px) {
+  :root {
+    --section-padding: 3rem;
+    --navbar-height: 60px;
+  }
+
+  .container {
+    width: calc(100% - 1.5rem);
+  }
+
+  /* Typography */
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero-slide {
+    min-height: 520px;
+    min-height: max(520px, 85dvh);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 0.88rem;
+  }
+
+  /* Announcement */
+
+  .announcement-label {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .announcement-item {
+    font-size: 0.68rem;
+  }
+
+  /* Highlights */
+
+  .highlight-card {
+    gap: var(--space-3);
+  }
+
+  .highlight-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .highlight-number {
+    font-size: 1rem;
+  }
+
+  .highlight-label {
+    font-size: 0.62rem;
+  }
+
+  /* Facilities */
+
+  .facility-card {
+    height: 230px;
+  }
+
+  /* Gallery */
+
+  .gallery-item {
+    height: 190px;
+  }
+
+  /* Notice */
+
+  .notice-item {
+    grid-template-columns:
+      40px
+      minmax(0, 1fr)
+      12px;
+  }
+
+  .notice-date {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ============================================================
+   08. EXTRA SMALL DEVICES
+   BELOW 360px
+   ============================================================ */
+
+@media (max-width: 359.98px) {
+  .container {
+    width: calc(100% - 1rem);
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+
+  .hero-slide {
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-description {
+    font-size: 0.84rem;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+  }
+
+  .academic-card,
+  .feature-card,
+  .news-content,
+  .notice-board,
+  .video-content,
+  .cta-card {
+    padding: 1rem;
+  }
+
+  .facility-card {
+    height: 210px;
+  }
+
+  .gallery-item {
+    height: 175px;
+  }
+}
+
+/* ============================================================
+   09. LANDSCAPE MOBILE
+   ============================================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --navbar-height: 58px;
+  }
+
+  .hero-slide {
+    min-height: 500px;
+    min-height: 100svh;
+
+    padding: 3rem 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  .hero-description {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-section .carousel-indicators {
+    bottom: 0.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
+}
+
+/* ============================================================
+   10. SHORT SCREEN DEVICES
+   ============================================================ */
+
+@media (max-height: 650px) and (min-width: 768px) {
+  .hero-slide {
+    min-height: 600px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-title {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-description {
+    margin-bottom: var(--space-5);
+  }
+}
+
+/* ============================================================
+   11. TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover-only transforms */
+
+  .academic-card:hover,
+  .feature-card:hover,
+  .news-card:hover,
+  .highlight-card:hover,
+  .facility-card:hover,
+  .gallery-item:hover {
+    transform: none;
+  }
+
+  .gallery-item:hover img,
+  .facility-card:hover img {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  /* Better touch target */
+
+  .btn,
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .nav-link,
+  .carousel-control-prev,
+  .carousel-control-next {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Gallery */
+
+  .gallery-overlay {
+    opacity: 1;
+
+    background: linear-gradient(transparent, rgba(8, 43, 73, 0.45));
+  }
+
+  /* Prevent accidental text selection */
+
+  .carousel-control-prev,
+  .carousel-control-next,
+  .carousel-indicators,
+  .back-to-top {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+/* ============================================================
+   12. POINTER DEVICES
+   ============================================================ */
+
+@media (hover: hover) and (pointer: fine) {
+  .btn,
+  .nav-link,
+  .academic-card,
+  .feature-card,
+  .news-card,
+  .facility-card,
+  .gallery-item {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ============================================================
+   13. SAFE AREA SUPPORT
+   iPhone / Notch / Dynamic Island
+   ============================================================ */
+
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .navbar,
+  .site-navbar,
+  .main-navbar {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+
+  .back-to-top {
+    right: max(1rem, env(safe-area-inset-right));
+
+    bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .hero-section {
+    padding-left: env(safe-area-inset-left);
+
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* ============================================================
+   14. DYNAMIC VIEWPORT SUPPORT
+   ============================================================ */
+
+@supports (height: 100dvh) {
+  .hero-slide {
+    min-height: max(540px, calc(100dvh - var(--navbar-height, 76px)));
+  }
+}
+
+/* ============================================================
+   15. RESPONSIVE GRID SYSTEM
+   ============================================================ */
+
+@media (max-width: 767.98px) {
+  .row {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  .grid,
+  .card-grid,
+  .feature-grid,
+  .academic-grid,
+  .facility-grid,
+  .gallery-grid,
+  .news-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-grid,
+  .feature-grid,
+  .academic-grid,
+  .facility-grid,
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   16. RESPONSIVE TABLES
+   ============================================================ */
+
+.table-responsive,
+.responsive-table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+}
+
+.table-responsive table,
+.responsive-table table {
+  min-width: 600px;
+}
+
+@media (max-width: 575.98px) {
+  .table-responsive table,
+  .responsive-table table {
+    min-width: 520px;
+  }
+}
+
+/* ============================================================
+   17. RESPONSIVE FORMS
+   ============================================================ */
+
+@media (max-width: 767.98px) {
+  .form-row,
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   18. RESPONSIVE NAVIGATION SAFETY
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+  .navbar-nav,
+  .nav-menu,
+  .navigation-menu {
+    max-width: 100%;
+  }
+
+  .navbar-collapse {
+    max-height: calc(100svh - var(--navbar-height, 72px));
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar-nav .nav-link {
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   19. RESPONSIVE CAROUSEL
+   ============================================================ */
+
+@media (max-width: 767.98px) {
+  .carousel,
+  .carousel-inner,
+  .carousel-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .carousel-indicators button {
+    min-width: 28px;
+    min-height: 20px;
+  }
+}
+
+/* ============================================================
+   20. RESPONSIVE MODALS
+   ============================================================ */
+
+@media (max-width: 575.98px) {
+  .modal-dialog {
+    width: auto;
+    max-width: none;
+
+    margin: 0.75rem auto;
+  }
+
+  .modal-content {
+    border-radius: var(--radius-lg, 1rem);
+  }
+
+  .modal-body {
+    max-height: 70svh;
+    overflow-y: auto;
+  }
+}
+
+/* ============================================================
+   21. IMAGE / VIDEO RESPONSIVE PROTECTION
+   ============================================================ */
+
+.responsive-media,
+.media-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.responsive-media img,
+.responsive-media video,
+.media-wrapper img,
+.media-wrapper video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   22. RESPONSIVE TYPOGRAPHY
+   ============================================================ */
+
+.hero-title,
+.section-title,
+.section-heading h2,
+.cta-content h2,
+.video-content h2 {
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .section-description {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   23. ACCESSIBILITY - USER FONT SCALING
+   ============================================================ */
+
+/*
+   JavaScript can set:
+
+   <html data-font-size="small">
+   <html data-font-size="normal">
+   <html data-font-size="large">
+   <html data-font-size="xlarge">
+*/
+
+html[data-font-size="small"] {
+  font-size: 93.75%;
+}
+
+html[data-font-size="normal"] {
+  font-size: 100%;
+}
+
+html[data-font-size="large"] {
+  font-size: 106.25%;
+}
+
+html[data-font-size="xlarge"] {
+  font-size: 112.5%;
+}
+
+/* ============================================================
+   24. ZOOM SYSTEM
+   ============================================================ */
+
+/*
+   IMPORTANT:
+   CSS cannot directly control the browser's native zoom.
+
+   These attributes create WEBSITE zoom levels.
+
+   JavaScript can set:
+
+   <html data-zoom="90">
+   <html data-zoom="100">
+   <html data-zoom="110">
+   <html data-zoom="125">
+   <html data-zoom="150">
+*/
+
+html[data-zoom="90"] {
+  --ui-scale: 0.9;
+}
+
+html[data-zoom="100"],
+html:not([data-zoom]) {
+  --ui-scale: 1;
+}
+
+html[data-zoom="110"] {
+  --ui-scale: 1.1;
+}
+
+html[data-zoom="125"] {
+  --ui-scale: 1.25;
+}
+
+html[data-zoom="150"] {
+  --ui-scale: 1.5;
+}
+
+/* ============================================================
+   25. ACCESSIBILITY LARGE UI MODE
+   ============================================================ */
+
+html[data-ui-size="large"] {
+  --space-1: 0.35rem;
+  --space-2: 0.55rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+}
+
+/* ============================================================
+   26. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   27. REDUCED TRANSPARENCY
+   ============================================================ */
+
+@media (prefers-reduced-transparency: reduce) {
+  .hero-overlay,
+  .gallery-overlay,
+  .facility-overlay,
+  .modal-backdrop {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* ============================================================
+   28. HIGH CONTRAST SUPPORT
+   ============================================================ */
+
+@media (prefers-contrast: more) {
+  .btn,
+  .card,
+  .academic-card,
+  .feature-card,
+  .news-card,
+  .notice-board {
+    border-width: 2px;
+  }
+
+  .section-description {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   29. VERY WIDE / ULTRA-WIDE SCREENS
+   ============================================================ */
+
+@media (min-width: 2000px) {
+  .container {
+    width: min(100% - 6rem, 1600px);
+    max-width: 1600px;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+
+  .section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* ============================================================
+   30. UNUSUAL ASPECT RATIO
+   ============================================================ */
+
+@media (min-aspect-ratio: 2/1) and (min-width: 900px) {
+  .hero-slide {
+    min-height: 650px;
+  }
+
+  .hero-content {
+    max-width: 750px;
+  }
+}
+
+/* ============================================================
+   31. VERY TALL MOBILE DEVICES
+   ============================================================ */
+
+@media (max-width: 575.98px) and (min-height: 850px) {
+  .hero-slide {
+    min-height: 680px;
+  }
+
+  .hero-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* ============================================================
+   32. PRINT RESPONSIVE
+   ============================================================ */
+
+@media print {
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .navbar,
+  .site-navbar,
+  .main-navbar,
+  .announcement-bar,
+  .carousel-control-prev,
+  .carousel-control-next,
+  .carousel-indicators,
+  .back-to-top,
+  .video-play-btn {
+    display: none !important;
+  }
+
+  .hero-slide {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 2rem 0 !important;
+  }
+
+  .section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* ============================================================
+   33. FINAL OVERFLOW GUARD
+   ============================================================ */
+
+section,
+header,
+footer,
+main,
+nav,
+article,
+aside {
+  max-width: 100%;
+}
+
+/* ============================================================
+   END OF ADVANCED RESPONSIVE DESIGN SYSTEM
+   ============================================================ */

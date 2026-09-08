@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about Ganga Secondary School, our values, vision and commitment to quality education in Nepal."
+    />
+    <meta
+      name="keywords"
+      content="Ganga Secondary School, about school, school mission, Nepal school community"
+    />
+    <meta name="author" content="Ganga Secondary School" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0F4C81" />
+    <title>About School | Ganga Secondary School</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/school.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <style>
+      body { background: #f8fafc; }
+      .page-hero {
+        padding: 80px 0 40px;
+        background: linear-gradient(180deg, #edf5ff 0%, #ffffff 100%);
+      }
+      .page-hero-content {
+        display: grid;
+        gap: 18px;
+      }
+      .page-kicker {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(15, 76, 129, 0.08);
+        color: var(--brand-navy);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .page-hero h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.12;
+        color: var(--brand-navy-dark);
+      }
+      .page-hero .lead {
+        max-width: 760px;
+        color: var(--text-body);
+        font-size: 1.08rem;
+        line-height: 1.8;
+      }
+      .about-panel,
+      .info-card,
+      .mission-card,
+      .value-card {
+        background: #fff;
+        border: 1px solid rgba(15, 76, 129, 0.08);
+        border-radius: 22px;
+        box-shadow: 0 18px 50px rgba(15, 76, 129, 0.06);
+      }
+      .about-panel {
+        padding: 30px;
+      }
+      .about-panel p {
+        color: var(--text-body);
+        line-height: 1.9;
+        margin-bottom: 0;
+      }
+      .info-grid,
+      .value-grid {
+        display: grid;
+        gap: 22px;
+      }
+      .info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .info-card,
+      .value-card,
+      .mission-card {
+        padding: 24px 22px;
+      }
+      .info-card .icon,
+      .mission-card .icon,
+      .value-card .icon {
+        width: 52px;
+        height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background: rgba(15, 76, 129, 0.08);
+        color: var(--brand-navy);
+        font-size: 22px;
+      }
+      .info-card h3,
+      .value-card h3,
+      .mission-card h3 {
+        margin-top: 18px;
+        margin-bottom: 10px;
+        color: var(--brand-navy-dark);
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .info-card p,
+      .value-card p,
+      .mission-card p {
+        margin: 0;
+        color: var(--text-body);
+        line-height: 1.7;
+      }
+      .section-wrap {
+        padding: 40px 0 30px;
+      }
+      .stat-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+      .stat-box {
+        text-align: center;
+        padding: 28px 18px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(15, 76, 129, 0.08);
+        border-radius: 18px;
+      }
+      .stat-box strong {
+        display: block;
+        color: var(--brand-navy);
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 800;
+      }
+      .stat-box span {
+        color: var(--text-body);
+      }
+      @media (max-width: 767.98px) {
+        .page-hero {
+          padding-top: 60px;
+        }
+        .about-panel { padding: 22px 18px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-topbar" aria-label="School contact information">
+      <div class="container">
+        <div class="site-topbar-inner">
+          <div class="site-topbar-info">
+            <span class="site-topbar-item">
+              <i class="bi bi-clock" aria-hidden="true"></i>
+              <span>School Hours: Sun – Fri, 10:00 AM – 4:00 PM</span>
+            </span>
+            <span class="site-topbar-item">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+              <a href="mailto:info@gangaschool.edu.np">info@gangaschool.edu.np</a>
+            </span>
+            <span class="site-topbar-item">
+              <i class="bi bi-telephone" aria-hidden="true"></i>
+              <a href="tel:+977XXXXXXXXXX">+977-XXXXXXXXXX</a>
+            </span>
+          </div>
+          <div class="language-switcher" aria-label="Choose site language">
+            <i class="bi bi-translate" aria-hidden="true"></i>
+            <button type="button" class="language-switcher-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <span class="language-switcher-divider" aria-hidden="true">|</span>
+            <button type="button" class="language-switcher-btn" data-lang="np" aria-pressed="false">नेपाली</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg school-navbar" aria-label="Main navigation">
+        <div class="container">
+          <a class="navbar-brand school-brand" href="index.html" aria-label="Ganga Secondary School Home">
+            <span class="school-logo">
+              <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" class="school-logo-image" />
+            </span>
+            <span class="school-brand-text">
+              <span class="school-name">Ganga Secondary School</span>
+              <span class="school-location">Nepal</span>
+            </span>
+          </a>
+          <button class="navbar-toggler school-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolMainNavigation" aria-controls="schoolMainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="schoolMainNavigation">
+            <ul class="navbar-nav ms-auto align-items-lg-center school-nav-list">
+              <li class="nav-item school-search-item">
+                <button type="button" class="school-search-button" aria-label="Open search" title="Search">
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="index.html">Home</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link school-nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">About</a>
+                <ul class="dropdown-menu school-dropdown-menu">
+                  <li><a class="dropdown-item" href="about.html">About School</a></li>
+                  <li><a class="dropdown-item" href="principal.html">Principal's Message</a></li>
+                  <li><a class="dropdown-item" href="administration.html">Administration</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="academics.html">Academics</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="admissions.html">Admissions</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="student-life.html">Student Life</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="team.html">Team</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                <ul class="dropdown-menu school-dropdown-menu">
+                  <li><a class="dropdown-item" href="news.html">News & Notices</a></li>
+                  <li><a class="dropdown-item" href="events.html">Events</a></li>
+                  <li><a class="dropdown-item" href="downloads.html">Downloads</a></li>
+                  <li><a class="dropdown-item" href="result.html">Results</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link school-nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <span class="page-kicker">Our School</span>
+            <h1>Inspired by excellence, rooted in values.</h1>
+            <p class="lead">
+              Ganga Secondary School is a learning community committed to academic excellence,
+              disciplined character, and a supportive environment where every student can grow with confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="container">
+          <div class="about-panel">
+            <p>
+              Established to nurture future-ready learners, our school combines strong academic foundations with
+              rich co-curricular experiences. We believe education must shape not only performance in examinations,
+              but also character, responsibility, creativity, compassion and leadership.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="container">
+          <div class="section-header text-center mb-4">
+            <span class="page-kicker">What We Stand For</span>
+          </div>
+          <div class="value-grid">
+            <article class="value-card">
+              <div class="icon"><i class="bi bi-book-half"></i></div>
+              <h3>Academic Excellence</h3>
+              <p>We promote strong learning habits, meaningful classroom engagement and continuous improvement.</p>
+            </article>
+            <article class="value-card">
+              <div class="icon"><i class="bi bi-people-fill"></i></div>
+              <h3>Student-Centred Growth</h3>
+              <p>Every learner is guided with care, mentorship and opportunities to discover their strengths.</p>
+            </article>
+            <article class="value-card">
+              <div class="icon"><i class="bi bi-shield-check"></i></div>
+              <h3>Discipline & Integrity</h3>
+              <p>We nurture responsible citizenship through honesty, respect, and a strong moral foundation.</p>
+            </article>
+            <article class="value-card">
+              <div class="icon"><i class="bi bi-lightbulb-fill"></i></div>
+              <h3>Creativity & Leadership</h3>
+              <p>Students are encouraged to think critically, collaborate confidently and lead constructively.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="container">
+          <div class="section-header text-center mb-4">
+            <span class="page-kicker">Our Commitment</span>
+          </div>
+          <div class="info-grid">
+            <article class="mission-card">
+              <div class="icon"><i class="bi bi-bullseye"></i></div>
+              <h3>Mission</h3>
+              <p>To provide a safe, inspiring and disciplined environment where students can thrive academically and personally.</p>
+            </article>
+            <article class="mission-card">
+              <div class="icon"><i class="bi bi-eye"></i></div>
+              <h3>Vision</h3>
+              <p>To develop confident, capable and compassionate citizens who contribute meaningfully to society.</p>
+            </article>
+            <article class="mission-card">
+              <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
+              <h3>Approach</h3>
+              <p>Through balanced learning, teacher guidance and regular parent-school collaboration.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="container">
+          <div class="section-header text-center mb-4">
+            <span class="page-kicker">By The Numbers</span>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-box"><strong>25+</strong><span>Years of service</span></div>
+            <div class="stat-box"><strong>1000+</strong><span>Students guided</span></div>
+            <div class="stat-box"><strong>40+</strong><span>Dedicated staff</span></div>
+            <div class="stat-box"><strong>15+</strong><span>Programs & activities</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-main">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand-block">
+              <div class="footer-brand">
+                <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" loading="lazy" />
+                <div>
+                  <strong>Ganga Secondary School</strong>
+                  <small>Quality Education • Bright Future</small>
+                </div>
+              </div>
+              <p>Empowering learners with knowledge, discipline, creativity, and values for a meaningful future.</p>
+            </div>
+            <div class="footer-links-block">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="news.html">News</a></li>
+              </ul>
+            </div>
+            <div class="footer-links-block">
+              <h3>School</h3>
+              <ul>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-contact-block">
+              <h3>Contact</h3>
+              <ul>
+                <li><a href="mailto:info@gangaschool.edu.np">info@gangaschool.edu.np</a></li>
+                <li><a href="tel:+977XXXXXXXXXX">+977-XXXXXXXXXX</a></li>
+                <li>School Hours: Mon – Fri</li>
+              </ul>
+              <a href="contact.html" class="footer-contact-button">Contact School <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p>© <span id="footer-current-year">2026</span> Ganga Secondary School. All rights reserved.</p>
+            <div class="footer-legal-links">
+              <a href="#">Privacy Policy</a>
+              <span aria-hidden="true">|</span>
+              <a href="#">Terms & Conditions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/language.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions · Admin Dashboard · Ganga Secondary School</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+
+</head>
+<body class="dashboard-body" data-page="admissions">
+
+  <div class="dashboard-shell">
+
+    <div class="sidebar-backdrop" data-sidebar-backdrop></div>
+
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-mark">GS</div>
+        <div class="sidebar-brand-text">
+          <strong>Ganga Sec. School</strong>
+          <span>Admin Panel</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="sidebar-section-label">Main</span>
+        <a href="index.html" class="sidebar-link">
+          <i class="bi bi-speedometer2"></i><span>Overview</span>
+        </a>
+
+        <span class="sidebar-section-label">People</span>
+        <a href="students.html" class="sidebar-link">
+          <i class="bi bi-people"></i><span>Students</span>
+        </a>
+        <a href="teachers.html" class="sidebar-link">
+          <i class="bi bi-person-workspace"></i><span>Teachers</span>
+        </a>
+        <a href="admissions.html" class="sidebar-link">
+          <i class="bi bi-file-earmark-person"></i><span>Admissions</span>
+          <span class="badge-count">5</span>
+        </a>
+
+        <span class="sidebar-section-label">Academics</span>
+        <a href="attendance.html" class="sidebar-link">
+          <i class="bi bi-calendar2-check"></i><span>Attendance</span>
+        </a>
+        <a href="results.html" class="sidebar-link">
+          <i class="bi bi-bar-chart-line"></i><span>Results</span>
+        </a>
+
+        <span class="sidebar-section-label">Website</span>
+        <a href="news.html" class="sidebar-link">
+          <i class="bi bi-megaphone"></i><span>News &amp; Notices</span>
+        </a>
+
+        <span class="sidebar-section-label">Finance &amp; System</span>
+        <a href="fees.html" class="sidebar-link">
+          <i class="bi bi-cash-coin"></i><span>Fees</span>
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <i class="bi bi-gear"></i><span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar">A</div>
+          <div class="sidebar-user-meta">
+            <strong>Admin User</strong>
+            <span>administrator</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+
+      <header class="dashboard-topbar">
+        <button class="topbar-toggle d-none d-lg-flex" data-sidebar-collapse aria-label="Collapse sidebar">
+          <i class="bi bi-layout-sidebar"></i>
+        </button>
+        <button class="topbar-toggle d-lg-none" data-sidebar-mobile-toggle aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="topbar-search">
+          <i class="bi bi-search"></i>
+          <input type="search" placeholder="Search…" aria-label="Search" />
+        </div>
+
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="dot"></span>
+          </button>
+          <a href="../../pages/index.html" class="topbar-icon-btn" aria-label="View public site">
+            <i class="bi bi-globe2"></i>
+          </a>
+          <div class="topbar-profile">
+            <div class="topbar-profile-avatar">A</div>
+            <div class="topbar-profile-meta">
+              <strong>Admin User</strong>
+              <span>Administrator</span>
+            </div>
+            <i class="bi bi-chevron-down" style="font-size:.7rem;color:var(--text-muted);"></i>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+
+        <div class="page-header">
+          <div>
+            <span class="eyebrow">People &middot; Admissions</span>
+            <h1>Admission Applications</h1>
+            <p>Review new admission applications submitted through the public website.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="filter-bar">
+            <div class="search-field">
+              <i class="bi bi-search"></i>
+              <input type="search" class="dash-form-control" id="admissionSearch" placeholder="Search applicant name" />
+            </div>
+            <select class="dash-form-select" id="admissionStatusFilter">
+              <option value="">All applications</option>
+              <option>Pending</option>
+              <option>Approved</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+          <div class="panel-body no-pad">
+            <div class="table-responsive-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Applicant</th>
+                    <th>Applying for</th>
+                    <th>Guardian contact</th>
+                    <th>Submitted</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="admissionsTbody"></tbody>
+              </table>
+              <div class="empty-state d-none" id="admissionsEmpty">
+                <i class="bi bi-inbox"></i>
+                <strong>No applications found</strong>
+                Try a different search term or filter.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/admissions.page.js"></script>
+</body>
+</html>

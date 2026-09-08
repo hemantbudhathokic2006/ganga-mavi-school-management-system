@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Ganga Secondary School</title>
+    <meta name="description"
+        content="Contact Ganga Secondary School for admissions, academic information, general enquiries and other school-related assistance.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animation.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+        :root {
+            --contact-bg: #f7fafc;
+            --contact-panel: #ffffff;
+            --contact-panel-alt: #f3f6fb;
+            --contact-line: rgba(15, 76, 129, 0.12);
+            --contact-text: #34495e;
+            --contact-heading: #102a43;
+            --contact-primary: #0f4c81;
+            --contact-primary-dark: #082c4a;
+            --contact-accent: #f4b400;
+            --contact-muted: #6b7280;
+            --contact-shadow: 0 18px 40px rgba(15, 76, 129, 0.08);
+        }
+
+        body {
+            background: #f5f7fb;
+            color: var(--contact-text);
+        }
+
+        .contact-page-shell {
+            background: linear-gradient(180deg, #edf4fb 0%, #f7fafc 100%);
+        }
+
+        .contact-hero {
+            padding: 72px 0 34px;
+            background: linear-gradient(180deg, rgba(15, 76, 129, 0.04), rgba(15, 76, 129, 0));
+        }
+
+        .hero-content {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .eyebrow,
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            color: var(--contact-primary);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before,
+        .section-label::before {
+            content: "";
+            display: inline-block;
+            width: 26px;
+            height: 2px;
+            border-radius: 999px;
+            background: rgba(15, 76, 129, 0.2);
+        }
+
+        .contact-hero h1 {
+            margin: 0 0 12px;
+            color: var(--contact-heading);
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+        }
+
+        .contact-hero p {
+            margin: 0;
+            color: var(--contact-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .contact-section,
+        .message-section,
+        .help-section {
+            padding-bottom: 42px;
+        }
+
+        .section-heading {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 10px;
+            color: var(--contact-heading);
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--contact-muted);
+            line-height: 1.8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            min-height: 100%;
+            padding: 26px 20px;
+            border: 1px solid var(--contact-line);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: var(--contact-shadow);
+        }
+
+        .contact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            min-width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(15, 76, 129, 0.08);
+            color: var(--contact-primary);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: translateY(-1px);
+            background: rgba(244, 180, 0, 0.12);
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.9;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card-label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--contact-primary);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .contact-card h3 {
+            margin: 0 0 8px;
+            color: var(--contact-heading);
+            font-size: 1.15rem;
+        }
+
+        .contact-card p {
+            margin: 0;
+            color: var(--contact-text);
+            line-height: 1.7;
+        }
+
+        .card-link,
+        .map-button,
+        .help-actions a,
+        .primary-action,
+        .secondary-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--contact-primary);
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .card-link {
+            margin-top: 12px;
+        }
+
+        .card-link:hover,
+        .map-button:hover,
+        .help-actions a:hover,
+        .primary-action:hover,
+        .secondary-action:hover {
+            color: var(--contact-primary-dark);
+            transform: translateX(2px);
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            color: #0e7a52;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .availability span {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #1fb56d;
+            box-shadow: 0 0 0 4px rgba(31, 181, 109, 0.12);
+        }
+
+        .message-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .form-wrapper,
+        .location-card {
+            border: 1px solid var(--contact-line);
+            border-radius: 28px;
+            background: var(--contact-panel);
+            box-shadow: var(--contact-shadow);
+        }
+
+        .form-wrapper {
+            padding: 30px 26px;
+        }
+
+        .section-heading.align-left {
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        .contact-form {
+            margin-top: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: var(--contact-heading);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .form-group label span {
+            color: #d9534f;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid rgba(15, 76, 129, 0.18);
+            border-radius: 14px;
+            background: var(--contact-panel-alt);
+            color: var(--contact-heading);
+            padding: 0.9rem 1rem;
+            font: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #8896a7;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(15, 76, 129, 0.52);
+            box-shadow: 0 0 0 4px rgba(15, 76, 129, 0.08);
+            outline: none;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 52px;
+            padding: 0.95rem 1.5rem;
+            border: 1px solid var(--contact-primary);
+            border-radius: 12px;
+            background: var(--contact-primary);
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 12px 22px rgba(15, 76, 129, 0.15);
+        }
+
+        .submit-button:hover {
+            background: var(--contact-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .submit-button span {
+            font-size: 1.1rem;
+        }
+
+        .location-card {
+            overflow: hidden;
+        }
+
+        .location-map {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(15, 76, 129, 0.22), rgba(15, 76, 129, 0.06));
+            border-bottom: 1px solid var(--contact-line);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .location-content {
+            padding: 24px 22px 26px;
+        }
+
+        .location-content h3 {
+            margin: 0 0 8px;
+            color: var(--contact-heading);
+            font-size: 1.5rem;
+        }
+
+        .location-content p {
+            margin: 0 0 18px;
+            color: var(--contact-text);
+            line-height: 1.8;
+        }
+
+        .map-button {
+            margin-top: 4px;
+        }
+
+        .help-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 30px 26px;
+            border: 1px solid var(--contact-line);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: var(--contact-shadow);
+        }
+
+        .help-content h2 {
+            margin: 0 0 10px;
+            color: var(--contact-heading);
+            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+        }
+
+        .help-content p {
+            margin: 0;
+            max-width: 640px;
+            color: var(--contact-muted);
+            line-height: 1.8;
+        }
+
+        .help-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .primary-action,
+        .secondary-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+
+        .primary-action {
+            background: var(--contact-primary);
+            color: #fff;
+            border: 1px solid var(--contact-primary);
+            box-shadow: 0 10px 18px rgba(15, 76, 129, 0.14);
+        }
+
+        .primary-action:hover {
+            background: var(--contact-primary-dark);
+            color: #fff;
+        }
+
+        .secondary-action {
+            background: #fff;
+            border: 1px solid rgba(15, 76, 129, 0.18);
+            color: var(--contact-primary);
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .message-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .help-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .help-actions {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .contact-hero {
+                padding-top: 56px;
+            }
+
+            .section-heading {
+                margin-bottom: 22px;
+            }
+
+            .contact-grid,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 22px 18px;
+            }
+
+            .form-wrapper {
+                padding: 22px 18px;
+            }
+
+            .location-content,
+            .help-content {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .submit-button,
+            .primary-action,
+            .secondary-action {
+                width: 100%;
+            }
+
+            .help-actions {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="contact-page-shell">
+
+    <!-- =========================================================
+     TOP INFORMATION BAR
+     Same as Home / Team pages — school hours, email, phone
+     and the language switcher (EN / नेपाली).
+     ========================================================= -->
+
+    <div class="site-topbar" aria-label="School contact information">
+
+        <div class="container">
+
+            <div class="site-topbar-inner">
+
+                <div class="site-topbar-info">
+
+
+                    <!-- School Hours -->
+
+                    <span class="site-topbar-item">
+
+                        <i class="bi bi-clock" aria-hidden="true"></i>
+
+                        <span>
+                            School Hours: Sun – Fri, 10:00 AM – 4:00 PM
+                        </span>
+
+                    </span>
+
+
+                    <!-- Email -->
+
+                    <span class="site-topbar-item">
+
+                        <i class="bi bi-envelope" aria-hidden="true"></i>
+
+                        <a href="mailto:info@gangaschool.edu.np">
+                            info@gangaschool.edu.np
+                        </a>
+
+                    </span>
+
+
+                    <!-- Phone -->
+
+                    <span class="site-topbar-item">
+
+                        <i class="bi bi-telephone" aria-hidden="true"></i>
+
+                        <a href="tel:+977XXXXXXXXXX">
+                            +977-XXXXXXXXXX
+                        </a>
+
+                    </span>
+
+
+                </div>
+
+
+                <!-- =================================================
+                 LANGUAGE SWITCHER
+                 ================================================= -->
+
+                <div class="site-topbar-language">
+
+                    <div class="language-switcher" aria-label="Choose site language">
+
+                        <i class="bi bi-translate" aria-hidden="true"></i>
+
+                        <button type="button" class="language-switcher-btn is-active" data-lang="en"
+                            aria-pressed="true">
+                            EN
+                        </button>
+
+                        <span class="language-switcher-divider" aria-hidden="true">
+                            |
+                        </span>
+
+                        <button type="button" class="language-switcher-btn" data-lang="np" aria-pressed="false">
+                            नेपाली
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     MAIN HEADER / NAVBAR
+     Static navbar matching index.html / team.html exactly.
+     Uses the original logo.png — not the shared #navbar-container
+     injection, which was not rendering the logo correctly.
+     ========================================================= -->
+
+    <header class="site-header">
+
+        <nav class="navbar navbar-expand-lg school-navbar" aria-label="Main navigation">
+
+            <div class="container">
+
+
+                <!-- =================================================
+                 SCHOOL BRAND
+                 ================================================= -->
+
+                <a class="navbar-brand school-brand" href="index.html" aria-label="Ganga Secondary School Home">
+
+                    <span class="school-logo">
+
+                        <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo"
+                            class="school-logo-image">
+
+                    </span>
+
+
+                    <span class="school-brand-text">
+
+                        <span class="school-name">
+                            Ganga Secondary School
+                        </span>
+
+                        <span class="school-location">
+                            Nepal
+                        </span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- =================================================
+                 MOBILE MENU BUTTON
+                 ================================================= -->
+
+                <button class="navbar-toggler school-navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#schoolMainNavigation" aria-controls="schoolMainNavigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                 MAIN NAVIGATION
+                 ================================================= -->
+
+                <div class="collapse navbar-collapse" id="schoolMainNavigation">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center school-nav-list">
+
+
+                        <!-- Search -->
+
+                        <li class="nav-item school-search-item">
+
+                            <button type="button" class="school-search-button" aria-label="Open search" title="Search">
+
+                                <i class="bi bi-search" aria-hidden="true"></i>
+
+                            </button>
+
+                        </li>
+
+
+
+                        <!-- Home -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link" href="index.html">
+                                Home
+                            </a>
+
+                        </li>
+
+
+
+                        <!-- About -->
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                            </a>
+
+
+                            <ul class="dropdown-menu school-dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About School
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="principal.html">
+                                        Principal's Message
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="administration.html">
+                                        Administration
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+
+                        <!-- Academics -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link" href="academics.html">
+                                Academics
+                            </a>
+
+                        </li>
+
+
+
+                        <!-- Admissions -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link" href="admissions.html">
+                                Admissions
+                            </a>
+
+                        </li>
+
+
+
+                        <!-- Student Life -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link" href="student-life.html">
+                                Student Life
+                            </a>
+
+                        </li>
+
+
+
+                        <!-- Resources -->
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Resources
+                            </a>
+
+
+                            <ul class="dropdown-menu school-dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item" href="news.html">
+                                        News
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="events.html">
+                                        Events
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="gallery.html">
+                                        Gallery
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="downloads.html">
+                                        Downloads
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="result.html">
+                                        Results
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+
+                        <!-- Faculty -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link" href="faculty.html">
+                                Faculty
+                            </a>
+
+                        </li>
+
+
+
+                        <!-- Team -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link" href="team.html">
+                                Team
+                            </a>
+
+                        </li>
+
+
+
+                        <!-- Contact - ACTIVE -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link school-nav-link active" href="contact.html" aria-current="page">
+                                Contact
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================================
+     SCHOOL ANNOUNCEMENT BAR
+     Same running-notice marquee as Home / Team pages.
+     ========================================================= -->
+
+    <section class="school-announcement" aria-label="School announcements">
+
+        <div class="container-fluid px-0">
+
+            <div class="announcement-inner">
+
+
+                <!-- Notice Label -->
+
+                <div class="announcement-label">
+
+                    <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+
+                    <span>
+                        Notice
+                    </span>
+
+                </div>
+
+
+                <!-- Running Notices -->
+
+                <div class="announcement-marquee" aria-live="polite">
+
+                    <div class="announcement-track">
+
+
+                        <a href="#" class="announcement-item">
+
+                            <span class="announcement-item-icon">
+
+                                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+
+                            </span>
+
+                            <span>
+                                Admission Open for Academic Session 2083
+                            </span>
+
+                        </a>
+
+
+                        <span class="announcement-separator" aria-hidden="true">
+                            •
+                        </span>
+
+
+                        <a href="#" class="announcement-item">
+
+                            <span class="announcement-item-icon">
+
+                                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+
+                            </span>
+
+                            <span>
+                                School Annual Program and Events
+                            </span>
+
+                        </a>
+
+
+                        <span class="announcement-separator" aria-hidden="true">
+                            •
+                        </span>
+
+
+                        <a href="#" class="announcement-item">
+
+                            <span class="announcement-item-icon">
+
+                                <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+
+                            </span>
+
+                            <span>
+                                Important School Notice for Students and Parents
+                            </span>
+
+                        </a>
+
+
+                        <span class="announcement-separator" aria-hidden="true">
+                            •
+                        </span>
+
+
+                        <a href="#" class="announcement-item">
+
+                            <span class="announcement-item-icon">
+
+                                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+
+                            </span>
+
+                            <span>
+                                Academic Updates and Examination Information
+                            </span>
+
+                        </a>
+
+
+                        <!-- Duplicate for continuous ticker -->
+
+                        <span class="announcement-separator" aria-hidden="true">
+                            •
+                        </span>
+
+
+                        <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+
+                            <span class="announcement-item-icon">
+
+                                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+
+                            </span>
+
+                            <span>
+                                Admission Open for Academic Session 2083
+                            </span>
+
+                        </a>
+
+
+                        <span class="announcement-separator" aria-hidden="true">
+                            •
+                        </span>
+
+
+                        <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+
+                            <span class="announcement-item-icon">
+
+                                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+
+                            </span>
+
+                            <span>
+                                School Annual Program and Events
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <main>
+        <section class="contact-hero">
+            <div class="container hero-content">
+                <span class="eyebrow">Get in Touch</span>
+                <h1>Contact Our School</h1>
+                <p>
+                    We are here to help you with admissions, academic enquiries,
+                    school information and any other assistance you may need.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section" aria-labelledby="contact-info-title">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">Contact Information</span>
+                    <h2 id="contact-info-title">We'd Love to Hear From You</h2>
+                    <p>
+                        Reach out to Ganga Secondary School through any of the
+                        contact options below.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <article class="contact-card">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 21s7-6.2 7-12A7 7 0 1 0 5 9c0 5.8 7 12 7 12Z"></path>
+                                <circle cx="12" cy="9" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="card-label">Visit Us</span>
+                            <h3>School Address</h3>
+                            <p>Ghorahi-2, Rampur,<br>Dang, Nepal</p>
+                            <a href="https://www.google.com/maps?q=Ghorahi-2,Rampur,Dang,Nepal" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                View on Google Maps <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.5 3.5 9 3l2 5-2 1.5a14 14 0 0 0 5.5 5.5L16 13l5 2-.5 2.5A3 3 0 0 1 17.6 20C10.1 20 4 13.9 4 6.4A3 3 0 0 1 6.5 3.5Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="card-label">Call Us</span>
+                            <h3>Phone Number</h3>
+                            <p>For general enquiries and school-related information.</p>
+                            <a href="tel:+9779851234567" class="card-link">+977-9851234567 <span
+                                    aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                <path d="m4 7 8 6 8-6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="card-label">Email Us</span>
+                            <h3>Email Address</h3>
+                            <p>Send us your questions and enquiries by email.</p>
+                            <a href="mailto:info@gangaschool.edu.np" class="card-link">info@gangaschool.edu.np <span
+                                    aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="8.5"></circle>
+                                <path d="M12 7v5l3.5 2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="card-label">Office Hours</span>
+                            <h3>School Office</h3>
+                            <p>Sunday – Friday<br>10:00 AM – 4:00 PM</p>
+                            <span class="availability"><span aria-hidden="true"></span>Open during school hours</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="message-section" aria-labelledby="contact-form-title">
+            <div class="container">
+                <div class="message-grid">
+                    <div class="form-wrapper">
+                        <div class="section-heading align-left">
+                            <span class="section-label">Send a Message</span>
+                            <h2 id="contact-form-title">How Can We Help?</h2>
+                            <p>
+                                Fill out the form below and our school administration team
+                                will get back to you as soon as possible.
+                            </p>
+                        </div>
+
+                        <form class="contact-form" action="#" method="post">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+                                    <input type="text" id="full-name" name="full_name"
+                                        placeholder="Enter your full name" autocomplete="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="you@example.com"
+                                        autocomplete="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+977 98XXXXXXXX"
+                                        autocomplete="tel">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="" selected disabled>Select a subject</option>
+                                        <option value="admission">Admission Enquiry</option>
+                                        <option value="academic">Academic Information</option>
+                                        <option value="general">General Enquiry</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message <span aria-hidden="true">*</span></label>
+                                <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">Send Message <span
+                                    aria-hidden="true">→</span></button>
+                        </form>
+                    </div>
+
+                    <aside class="location-card" aria-labelledby="visit-title">
+                        <div class="location-map">
+                            <iframe src="https://www.google.com/maps?q=Ghorahi-2,Rampur,Dang,Nepal&output=embed"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                title="Ganga Secondary School location map">
+                            </iframe>
+                        </div>
+
+                        <div class="location-content">
+                            <span class="section-label">Our Location</span>
+                            <h3 id="visit-title">Come Visit Us</h3>
+                            <p>
+                                We welcome parents, students and visitors to our school. Please
+                                contact the school office before your visit for assistance.
+                            </p>
+                            <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer"
+                                class="map-button">
+                                Get Directions <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="help-section" aria-labelledby="support-title">
+            <div class="container">
+                <div class="help-content">
+                    <div>
+                        <span class="section-label">Need More Help?</span>
+                        <h2 id="support-title">Looking for School Information?</h2>
+                        <p>
+                            Explore our other pages to learn more about admissions,
+                            academics, school activities and life at Ganga Secondary School.
+                        </p>
+                    </div>
+
+                    <div class="help-actions">
+                        <a href="admissions.html" class="primary-action">Admissions <span
+                                aria-hidden="true">→</span></a>
+                        <a href="about.html" class="secondary-action">About School <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/language.js" defer></script>
+</body>
+
+</html>

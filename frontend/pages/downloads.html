@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- =========================================================
+         BASIC META
+         ========================================================= -->
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Download important notices, forms, academic documents and resources from Ganga Secondary School.">
+
+  <meta name="keywords" content="Ganga Secondary School, Downloads, Resources, Notices, Admission, Academic, Results">
+
+  <meta name="author" content="Ganga Secondary School">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#0F4C81">
+
+
+  <!-- =========================================================
+         PAGE TITLE
+         ========================================================= -->
+
+  <title>
+    Downloads &amp; Resources | Ganga Secondary School
+  </title>
+
+
+  <!-- =========================================================
+         FAVICON
+         ========================================================= -->
+
+  <link rel="icon" type="image/x-icon" href="../assets/images/school.ico">
+
+
+  <!-- =========================================================
+         GOOGLE FONTS
+         ========================================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <!-- =========================================================
+         BOOTSTRAP
+         ========================================================= -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- =========================================================
+         BOOTSTRAP ICONS
+         ========================================================= -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+
+  <!-- =========================================================
+         PROJECT CSS
+         ========================================================= -->
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <link rel="stylesheet" href="../assets/css/animation.css">
+
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+
+
+  <!-- =========================================================
+         DOWNLOADS PAGE CSS (page-specific only)
+         ========================================================= -->
+
+  <style>
+    /* =============================================================
+   DOWNLOADS PAGE — PAGE-SPECIFIC STYLES ONLY
+   Reuses shared classes already defined in style.css
+   (.container, .eyebrow, .hero-badge, .section-heading, .cta-button)
+   Do not duplicate global topbar / navbar / announcement / footer
+   styles here — those already come from style.css.
+   ============================================================= */
+
+:root {
+    --dl-primary: #0f4c81;
+    --dl-primary-dark: #082c4a;
+    --dl-accent: #f4b400;
+    --dl-heading: #102a43;
+    --dl-text: #34495e;
+    --dl-muted: #6b7280;
+    --dl-line: rgba(15, 76, 129, 0.12);
+    --dl-panel: #ffffff;
+    --dl-panel-alt: #f3f6fb;
+    --dl-shadow: 0 18px 40px rgba(15, 76, 129, 0.08);
+}
+
+.downloads-page {
+    background: linear-gradient(180deg, #edf4fb 0%, #f7fafc 100%);
+}
+
+
+/* -------------------------------------------------------------
+   BREADCRUMB
+   ------------------------------------------------------------- */
+
+.downloads-breadcrumb-bar {
+    padding: 18px 0 0;
+}
+
+.downloads-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--dl-muted);
+}
+
+.downloads-breadcrumb a {
+    color: var(--dl-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.downloads-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.downloads-breadcrumb span[aria-current="page"] {
+    color: var(--dl-heading);
+    font-weight: 600;
+}
+
+
+/* -------------------------------------------------------------
+   HERO
+   ------------------------------------------------------------- */
+
+.downloads-hero {
+    padding: 40px 0 56px;
+}
+
+.downloads-hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 32px;
+}
+
+.downloads-hero-content h1 {
+    margin: 0 0 14px;
+    color: var(--dl-heading);
+    font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.downloads-hero-content h1 span {
+    color: var(--dl-primary);
+}
+
+.downloads-hero-content p {
+    margin: 0 0 26px;
+    max-width: 560px;
+    color: var(--dl-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.downloads-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.downloads-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0.85rem 1.35rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.downloads-btn-primary {
+    background: var(--dl-primary);
+    color: #fff;
+    border: 1px solid var(--dl-primary);
+    box-shadow: 0 12px 22px rgba(15, 76, 129, 0.16);
+}
+
+.downloads-btn-primary:hover {
+    background: var(--dl-primary-dark);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.downloads-btn-secondary {
+    background: #fff;
+    color: var(--dl-primary);
+    border: 1px solid rgba(15, 76, 129, 0.2);
+}
+
+.downloads-btn-secondary:hover {
+    border-color: var(--dl-primary);
+    transform: translateY(-1px);
+}
+
+.downloads-hero-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-download-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(15, 76, 129, 0.08);
+    border: 1px solid var(--dl-line);
+    color: var(--dl-primary);
+    font-size: 3.2rem;
+}
+
+
+/* -------------------------------------------------------------
+   SECTION SPACING
+   ------------------------------------------------------------- */
+
+.downloads-section {
+    padding: 12px 0 46px;
+}
+
+.downloads-section-alt {
+    padding-top: 4px;
+}
+
+
+/* -------------------------------------------------------------
+   RESOURCE CATEGORY CARDS
+   ------------------------------------------------------------- */
+
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.download-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 26px 24px;
+    border: 1px solid var(--dl-line);
+    border-radius: 20px;
+    background: var(--dl-panel);
+    box-shadow: var(--dl-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.download-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(15, 76, 129, 0.28);
+    box-shadow: 0 22px 44px rgba(15, 76, 129, 0.12);
+}
+
+.download-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.download-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(15, 76, 129, 0.08);
+    color: var(--dl-primary);
+    font-size: 1.35rem;
+}
+
+.download-badge {
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(244, 180, 0, 0.14);
+    color: #8a6300;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.download-card h3 {
+    margin: 0 0 10px;
+    color: var(--dl-heading);
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.download-card p {
+    margin: 0;
+    flex-grow: 1;
+    color: var(--dl-text);
+    line-height: 1.7;
+}
+
+.download-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--dl-line);
+}
+
+.download-type {
+    color: var(--dl-muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--dl-primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+    color: var(--dl-primary-dark);
+    transform: translateX(2px);
+}
+
+
+/* -------------------------------------------------------------
+   IMPORTANT DOCUMENTS LIST
+   ------------------------------------------------------------- */
+
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--dl-line);
+    border-radius: 20px;
+    background: var(--dl-panel);
+    box-shadow: var(--dl-shadow);
+    overflow: hidden;
+}
+
+.document-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--dl-line);
+    transition: background-color 0.2s ease;
+}
+
+.document-row:last-child {
+    border-bottom: none;
+}
+
+.document-row:hover {
+    background: var(--dl-panel-alt);
+}
+
+.document-row-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(15, 76, 129, 0.08);
+    color: var(--dl-primary);
+    font-size: 1.1rem;
+}
+
+.document-row-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.document-row-title {
+    color: var(--dl-heading);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.document-row-desc {
+    color: var(--dl-muted);
+    font-size: 0.88rem;
+}
+
+.document-row-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--dl-primary);
+    font-weight: 700;
+    font-size: 0.92rem;
+    white-space: nowrap;
+}
+
+
+/* -------------------------------------------------------------
+   QUICK LINKS
+   ------------------------------------------------------------- */
+
+.downloads-quick-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 30px 28px;
+    border: 1px solid var(--dl-line);
+    border-radius: 22px;
+    background: var(--dl-panel-alt);
+}
+
+.quick-links-content h2 {
+    margin: 0 0 8px;
+    color: var(--dl-heading);
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
+.quick-links-content p {
+    margin: 0;
+    max-width: 480px;
+    color: var(--dl-muted);
+    line-height: 1.7;
+}
+
+.quick-links-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.quick-links-buttons a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid rgba(15, 76, 129, 0.16);
+    color: var(--dl-primary);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.quick-links-buttons a:hover {
+    border-color: var(--dl-primary);
+    transform: translateY(-1px);
+}
+
+
+/* -------------------------------------------------------------
+   CONTACT SCHOOL CTA
+   ------------------------------------------------------------- */
+
+.downloads-cta {
+    padding-bottom: 56px;
+}
+
+.downloads-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px 30px;
+    border-radius: 22px;
+    background: var(--dl-primary);
+    color: #fff;
+}
+
+.downloads-cta-inner h3 {
+    margin: 0 0 6px;
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+}
+
+.downloads-cta-inner p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.downloads-cta-inner .cta-button {
+    flex-shrink: 0;
+    background: #fff;
+    color: var(--dl-primary-dark);
+}
+
+.downloads-cta-inner .cta-button:hover {
+    background: var(--dl-accent);
+    color: var(--dl-primary-dark);
+}
+
+
+/* =============================================================
+   RESPONSIVE
+   Desktop: 3 cards / row (default above)
+   Tablet:  2 cards / row
+   Mobile:  1 card / row
+   ============================================================= */
+
+@media (max-width: 1024px) {
+
+    .downloads-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .downloads-hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .downloads-hero-actions {
+        justify-content: center;
+    }
+
+    .downloads-hero-icon {
+        order: -1;
+    }
+
+    .hero-download-circle {
+        width: 120px;
+        height: 120px;
+        font-size: 2.4rem;
+    }
+
+    .downloads-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .downloads-quick-links {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .quick-links-buttons {
+        justify-content: flex-start;
+    }
+
+    .downloads-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .downloads-hero {
+        padding: 28px 0 40px;
+    }
+
+    .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .downloads-hero-actions,
+    .downloads-hero-actions .downloads-btn {
+        width: 100%;
+    }
+
+    .downloads-hero-actions {
+        flex-direction: column;
+    }
+
+    .document-row {
+        flex-wrap: wrap;
+        padding: 16px 18px;
+    }
+
+    .document-row-action {
+        margin-left: 60px;
+    }
+
+    .downloads-quick-links,
+    .downloads-cta-inner {
+        padding: 22px 20px;
+    }
+
+    .quick-links-buttons a {
+        flex: 1 1 calc(50% - 10px);
+        justify-content: center;
+    }
+
+    .downloads-cta-inner .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+
+  <!-- =========================================================
+     TOP INFORMATION BAR
+     Identical to Home / Team / Contact pages.
+     ========================================================= -->
+
+  <div class="site-topbar" aria-label="School contact information">
+
+    <div class="container">
+
+      <div class="site-topbar-inner">
+
+        <div class="site-topbar-info">
+
+
+          <!-- School Hours -->
+
+          <span class="site-topbar-item">
+
+            <i class="bi bi-clock" aria-hidden="true"></i>
+
+            <span>
+              School Hours: Sun – Fri, 10:00 AM – 4:00 PM
+            </span>
+
+          </span>
+
+
+          <!-- Email -->
+
+          <span class="site-topbar-item">
+
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+
+            <a href="mailto:info@gangaschool.edu.np">
+              info@gangaschool.edu.np
+            </a>
+
+          </span>
+
+
+          <!-- Phone -->
+
+          <span class="site-topbar-item">
+
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+
+            <a href="tel:+977XXXXXXXXXX">
+              +977-XXXXXXXXXX
+            </a>
+
+          </span>
+
+
+        </div>
+
+
+        <!-- =================================================
+                 LANGUAGE SWITCHER
+                 ================================================= -->
+
+        <div class="site-topbar-language">
+
+          <div class="language-switcher" aria-label="Choose site language">
+
+            <i class="bi bi-translate" aria-hidden="true"></i>
+
+            <button type="button" class="language-switcher-btn is-active" data-lang="en" aria-pressed="true">
+              EN
+            </button>
+
+            <span class="language-switcher-divider" aria-hidden="true">
+              |
+            </span>
+
+            <button type="button" class="language-switcher-btn" data-lang="np" aria-pressed="false">
+              नेपाली
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+     MAIN HEADER / NAVBAR
+     Identical structure to Home / Team / Contact pages.
+     ========================================================= -->
+
+  <header class="site-header">
+
+    <nav class="navbar navbar-expand-lg school-navbar" aria-label="Main navigation">
+
+      <div class="container">
+
+
+        <!-- =================================================
+                 SCHOOL BRAND
+                 ================================================= -->
+
+        <a class="navbar-brand school-brand" href="index.html" aria-label="Ganga Secondary School Home">
+
+          <span class="school-logo">
+
+            <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" class="school-logo-image">
+
+          </span>
+
+
+          <span class="school-brand-text">
+
+            <span class="school-name">
+              Ganga Secondary School
+            </span>
+
+            <span class="school-location">
+              Nepal
+            </span>
+
+          </span>
+
+        </a>
+
+
+
+        <!-- =================================================
+                 MOBILE MENU BUTTON
+                 ================================================= -->
+
+        <button class="navbar-toggler school-navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#schoolMainNavigation" aria-controls="schoolMainNavigation" aria-expanded="false"
+          aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+
+        <!-- =================================================
+                 MAIN NAVIGATION
+                 ================================================= -->
+
+        <div class="collapse navbar-collapse" id="schoolMainNavigation">
+
+          <ul class="navbar-nav ms-auto align-items-lg-center school-nav-list">
+
+
+            <!-- Search -->
+
+            <li class="nav-item school-search-item">
+
+              <button type="button" class="school-search-button" aria-label="Open search" title="Search">
+
+                <i class="bi bi-search" aria-hidden="true"></i>
+
+              </button>
+
+            </li>
+
+
+
+            <!-- Home -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="index.html">
+                Home
+              </a>
+
+            </li>
+
+
+
+            <!-- About -->
+
+            <li class="nav-item dropdown">
+
+              <a class="nav-link school-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                About
+              </a>
+
+
+              <ul class="dropdown-menu school-dropdown-menu">
+
+                <li>
+                  <a class="dropdown-item" href="about.html">
+                    About School
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="principal.html">
+                    Principal's Message
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="administration.html">
+                    Administration
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+
+
+
+            <!-- Academics -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="academics.html">
+                Academics
+              </a>
+
+            </li>
+
+
+
+            <!-- Admissions -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="admissions.html">
+                Admissions
+              </a>
+
+            </li>
+
+
+
+            <!-- Student Life -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="student-life.html">
+                Student Life
+              </a>
+
+            </li>
+
+
+
+            <!-- Resources -->
+
+            <li class="nav-item dropdown">
+
+              <a class="nav-link school-nav-link dropdown-toggle active" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                Resources
+              </a>
+
+
+              <ul class="dropdown-menu school-dropdown-menu">
+
+                <li>
+                  <a class="dropdown-item" href="news.html">
+                    News
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="events.html">
+                    Events
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="gallery.html">
+                    Gallery
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item active" href="downloads.html" aria-current="page">
+                    Downloads
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="result.html">
+                    Results
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+
+
+
+            <!-- Faculty -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="faculty.html">
+                Faculty
+              </a>
+
+            </li>
+
+
+
+            <!-- Team -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="team.html">
+                Team
+              </a>
+
+            </li>
+
+
+
+            <!-- Contact -->
+
+            <li class="nav-item">
+
+              <a class="nav-link school-nav-link" href="contact.html">
+                Contact
+              </a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================================================
+     SCHOOL ANNOUNCEMENT BAR
+     Identical to Home / Team / Contact pages.
+     ========================================================= -->
+
+  <section class="school-announcement" aria-label="School announcements">
+
+    <div class="container-fluid px-0">
+
+      <div class="announcement-inner">
+
+
+        <!-- Notice Label -->
+
+        <div class="announcement-label">
+
+          <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+
+          <span>
+            Notice
+          </span>
+
+        </div>
+
+
+        <!-- Running Notices -->
+
+        <div class="announcement-marquee" aria-live="polite">
+
+          <div class="announcement-track">
+
+
+            <a href="#" class="announcement-item">
+
+              <span class="announcement-item-icon">
+
+                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+
+              </span>
+
+              <span>
+                Admission Open for Academic Session 2083
+              </span>
+
+            </a>
+
+
+            <span class="announcement-separator" aria-hidden="true">
+              •
+            </span>
+
+
+            <a href="#" class="announcement-item">
+
+              <span class="announcement-item-icon">
+
+                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+
+              </span>
+
+              <span>
+                School Annual Program and Events
+              </span>
+
+            </a>
+
+
+            <span class="announcement-separator" aria-hidden="true">
+              •
+            </span>
+
+
+            <a href="#" class="announcement-item">
+
+              <span class="announcement-item-icon">
+
+                <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+
+              </span>
+
+              <span>
+                Important School Notice for Students and Parents
+              </span>
+
+            </a>
+
+
+            <span class="announcement-separator" aria-hidden="true">
+              •
+            </span>
+
+
+            <a href="#" class="announcement-item">
+
+              <span class="announcement-item-icon">
+
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+
+              </span>
+
+              <span>
+                Academic Updates and Examination Information
+              </span>
+
+            </a>
+
+
+            <!-- Duplicate for continuous ticker -->
+
+            <span class="announcement-separator" aria-hidden="true">
+              •
+            </span>
+
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+
+              <span class="announcement-item-icon">
+
+                <i class="bi bi-bell-fill" aria-hidden="true"></i>
+
+              </span>
+
+              <span>
+                Admission Open for Academic Session 2083
+              </span>
+
+            </a>
+
+
+            <span class="announcement-separator" aria-hidden="true">
+              •
+            </span>
+
+
+            <a href="#" class="announcement-item" aria-hidden="true" tabindex="-1">
+
+              <span class="announcement-item-icon">
+
+                <i class="bi bi-calendar-event" aria-hidden="true"></i>
+
+              </span>
+
+              <span>
+                School Annual Program and Events
+              </span>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+     DOWNLOADS PAGE MAIN CONTENT
+     ========================================================= -->
+
+  <main class="downloads-page">
+
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <div class="downloads-breadcrumb-bar">
+
+      <div class="container">
+
+        <nav class="downloads-breadcrumb" aria-label="Breadcrumb">
+
+          <a href="index.html">Home</a>
+
+          <span aria-hidden="true">/</span>
+
+          <span aria-current="page">Downloads</span>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="downloads-hero" aria-labelledby="downloads-hero-title">
+
+      <div class="container">
+
+        <div class="downloads-hero-inner">
+
+          <div class="downloads-hero-content">
+
+            <div class="hero-badge">
+
+              <span class="hero-badge-dot"></span>
+
+              School Resources
+
+            </div>
+
+            <h1 id="downloads-hero-title">
+
+              Downloads
+              <span>&amp; Resources.</span>
+
+            </h1>
+
+            <p>
+
+              Access important school information, academic resources,
+              notices, results and other useful school resources in
+              one place.
+
+            </p>
+
+            <div class="downloads-hero-actions">
+
+              <a href="admissions.html" class="downloads-btn downloads-btn-primary">
+
+                Admission Resources
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+              </a>
+
+              <a href="news.html" class="downloads-btn downloads-btn-secondary">
+
+                School Notices
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="downloads-hero-icon" aria-hidden="true">
+
+            <div class="hero-download-circle">
+
+              <i class="bi bi-folder2-open"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESOURCE CATEGORIES
+         ===================================================== -->
+
+    <section class="downloads-section" aria-labelledby="resource-categories-title">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Document Center
+          </div>
+
+          <h2 id="resource-categories-title">
+            Resource Categories
+          </h2>
+
+          <p>
+            Find the section that matches the information you need.
+          </p>
+
+        </div>
+
+
+        <div class="downloads-grid" aria-label="School resource categories">
+
+
+          <!-- Notices & Announcements -->
+
+          <article class="download-card">
+
+            <div class="download-card-top">
+
+              <div class="download-icon" aria-hidden="true">
+                <i class="bi bi-megaphone"></i>
+              </div>
+
+              <span class="download-badge">Notices</span>
+
+            </div>
+
+            <h3>Notices &amp; Announcements</h3>
+
+            <p>
+              Stay updated with school announcements, circulars and
+              important academic updates.
+            </p>
+
+            <div class="download-card-footer">
+
+              <span class="download-type">School Page</span>
+
+              <a href="news.html" class="download-button">
+                View <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Admission Resources -->
+
+          <article class="download-card">
+
+            <div class="download-card-top">
+
+              <div class="download-icon" aria-hidden="true">
+                <i class="bi bi-journal-check"></i>
+              </div>
+
+              <span class="download-badge">Admission</span>
+
+            </div>
+
+            <h3>Admission Resources</h3>
+
+            <p>
+              Learn about the admission process, eligibility and
+              important enrollment information.
+            </p>
+
+            <div class="download-card-footer">
+
+              <span class="download-type">School Page</span>
+
+              <a href="admissions.html" class="download-button">
+                Open <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Academic Resources -->
+
+          <article class="download-card">
+
+            <div class="download-card-top">
+
+              <div class="download-icon" aria-hidden="true">
+                <i class="bi bi-mortarboard"></i>
+              </div>
+
+              <span class="download-badge">Academics</span>
+
+            </div>
+
+            <h3>Academic Resources</h3>
+
+            <p>
+              Explore our learning areas, student support and teaching
+              approach for academic growth.
+            </p>
+
+            <div class="download-card-footer">
+
+              <span class="download-type">School Page</span>
+
+              <a href="academics.html" class="download-button">
+                Explore <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Results -->
+
+          <article class="download-card">
+
+            <div class="download-card-top">
+
+              <div class="download-icon" aria-hidden="true">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+
+              <span class="download-badge">Results</span>
+
+            </div>
+
+            <h3>Academic Results</h3>
+
+            <p>
+              Access result information, performance updates and
+              student achievement resources.
+            </p>
+
+            <div class="download-card-footer">
+
+              <span class="download-type">School Page</span>
+
+              <a href="result.html" class="download-button">
+                View <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- Events & Activities -->
+
+          <article class="download-card">
+
+            <div class="download-card-top">
+
+              <div class="download-icon" aria-hidden="true">
+                <i class="bi bi-calendar-event"></i>
+              </div>
+
+              <span class="download-badge">Events</span>
+
+            </div>
+
+            <h3>Events &amp; Activities</h3>
+
+            <p>
+              See upcoming programs, celebrations, festivals and
+              learning activities across the year.
+            </p>
+
+            <div class="download-card-footer">
+
+              <span class="download-type">School Page</span>
+
+              <a href="events.html" class="download-button">
+                Explore <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- School Information -->
+
+          <article class="download-card">
+
+            <div class="download-card-top">
+
+              <div class="download-icon" aria-hidden="true">
+                <i class="bi bi-info-circle"></i>
+              </div>
+
+              <span class="download-badge">School</span>
+
+            </div>
+
+            <h3>School Information</h3>
+
+            <p>
+              Learn more about our school, mission, values and
+              overall academic environment.
+            </p>
+
+            <div class="download-card-footer">
+
+              <span class="download-type">School Page</span>
+
+              <a href="about.html" class="download-button">
+                Open <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IMPORTANT DOCUMENTS / RESOURCES LIST
+         ===================================================== -->
+
+    <section class="downloads-section downloads-section-alt" aria-labelledby="documents-list-title">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Quick Reference
+          </div>
+
+          <h2 id="documents-list-title">
+            Important Documents &amp; Resources
+          </h2>
+
+          <p>
+            Direct links to the most requested school information.
+          </p>
+
+        </div>
+
+
+        <div class="documents-list" aria-label="Important documents and resources">
+
+
+          <a href="admissions.html" class="document-row">
+
+            <span class="document-row-icon" aria-hidden="true">
+              <i class="bi bi-journal-check"></i>
+            </span>
+
+            <span class="document-row-text">
+
+              <span class="document-row-title">Admission Information</span>
+
+              <span class="document-row-desc">Process, eligibility and enrollment details</span>
+
+            </span>
+
+            <span class="document-row-action">
+              Open <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </span>
+
+          </a>
+
+
+          <a href="news.html" class="document-row">
+
+            <span class="document-row-icon" aria-hidden="true">
+              <i class="bi bi-megaphone"></i>
+            </span>
+
+            <span class="document-row-text">
+
+              <span class="document-row-title">School Notices</span>
+
+              <span class="document-row-desc">Latest announcements and circulars</span>
+
+            </span>
+
+            <span class="document-row-action">
+              View <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </span>
+
+          </a>
+
+
+          <a href="academics.html" class="document-row">
+
+            <span class="document-row-icon" aria-hidden="true">
+              <i class="bi bi-mortarboard"></i>
+            </span>
+
+            <span class="document-row-text">
+
+              <span class="document-row-title">Academic Information</span>
+
+              <span class="document-row-desc">Programs, curriculum and academic approach</span>
+
+            </span>
+
+            <span class="document-row-action">
+              Explore <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </span>
+
+          </a>
+
+
+          <a href="result.html" class="document-row">
+
+            <span class="document-row-icon" aria-hidden="true">
+              <i class="bi bi-clipboard-data"></i>
+            </span>
+
+            <span class="document-row-text">
+
+              <span class="document-row-title">Academic Results</span>
+
+              <span class="document-row-desc">Result and performance information</span>
+
+            </span>
+
+            <span class="document-row-action">
+              View <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </span>
+
+          </a>
+
+
+          <a href="events.html" class="document-row">
+
+            <span class="document-row-icon" aria-hidden="true">
+              <i class="bi bi-calendar-event"></i>
+            </span>
+
+            <span class="document-row-text">
+
+              <span class="document-row-title">School Events</span>
+
+              <span class="document-row-desc">Programs, festivals and activities</span>
+
+            </span>
+
+            <span class="document-row-action">
+              Explore <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </span>
+
+          </a>
+
+
+          <a href="contact.html" class="document-row">
+
+            <span class="document-row-icon" aria-hidden="true">
+              <i class="bi bi-telephone"></i>
+            </span>
+
+            <span class="document-row-text">
+
+              <span class="document-row-title">Contact Information</span>
+
+              <span class="document-row-desc">Reach the school office directly</span>
+
+            </span>
+
+            <span class="document-row-action">
+              Open <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK LINKS
+         ===================================================== -->
+
+    <section class="downloads-section" aria-labelledby="quick-links-title">
+
+      <div class="container">
+
+        <div class="downloads-quick-links">
+
+          <div class="quick-links-content">
+
+            <div class="eyebrow">
+              Need More Information?
+            </div>
+
+            <h2 id="quick-links-title">
+              Explore Other School Sections
+            </h2>
+
+            <p>
+              Visit the relevant section to learn more about
+              Ganga Secondary School.
+            </p>
+
+          </div>
+
+
+          <div class="quick-links-buttons" aria-label="Quick links">
+
+            <a href="about.html">About <span aria-hidden="true">→</span></a>
+
+            <a href="academics.html">Academics <span aria-hidden="true">→</span></a>
+
+            <a href="admissions.html">Admissions <span aria-hidden="true">→</span></a>
+
+            <a href="news.html">News &amp; Notices <span aria-hidden="true">→</span></a>
+
+            <a href="result.html">Results <span aria-hidden="true">→</span></a>
+
+            <a href="contact.html">Contact <span aria-hidden="true">→</span></a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT SCHOOL CTA
+         ===================================================== -->
+
+    <section class="downloads-cta" aria-labelledby="downloads-cta-title">
+
+      <div class="container">
+
+        <div class="downloads-cta-inner">
+
+          <div>
+
+            <h3 id="downloads-cta-title">
+              Need help finding a resource?
+            </h3>
+
+            <p>
+              Contact the school office for assistance.
+            </p>
+
+          </div>
+
+
+          <a href="contact.html" class="cta-button">
+
+            Contact School
+
+            <span aria-hidden="true">→</span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+     FOOTER
+     Identical footer system to Home / Team pages.
+     ========================================================= -->
+
+  <footer class="site-footer">
+
+
+    <!-- =====================================================
+         FOOTER MAIN
+         ===================================================== -->
+
+    <div class="site-footer-main">
+
+      <div class="container">
+
+        <div class="row g-5">
+
+
+          <!-- =================================================
+                     SCHOOL INFORMATION
+                     ================================================= -->
+
+          <div class="col-lg-4 col-md-6">
+
+            <div class="footer-school">
+
+
+              <!-- School Brand -->
+
+              <a href="index.html" class="footer-brand" aria-label="Ganga Secondary School Home">
+
+                <img src="../assets/images/logo.png" alt="Ganga Secondary School Logo" loading="lazy">
+
+                <span>
+
+                  <strong>
+                    Ganga Secondary School
+                  </strong>
+
+                  <small>
+                    Nepal
+                  </small>
+
+                </span>
+
+              </a>
+
+
+              <!-- Description -->
+
+              <p class="footer-description">
+
+                Committed to quality education,
+                character development and creating
+                confident learners prepared for a
+                changing world.
+
+              </p>
+
+
+              <!-- Social Links -->
+
+              <div class="site-topbar-social" aria-label="Social media links">
+
+
+                <!-- Facebook -->
+
+                <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+
+                </a>
+
+
+                <!-- YouTube -->
+
+                <a href="#" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+
+                  <i class="bi bi-youtube" aria-hidden="true"></i>
+
+                </a>
+
+
+                <!-- Instagram -->
+
+                <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+
+                </a>
+
+
+                <!-- WhatsApp -->
+
+                <a href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+
+                </a>
+
+
+                <!-- LinkedIn -->
+
+                <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+
+                </a>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+                     QUICK LINKS
+                     ================================================= -->
+
+          <div class="col-6 col-md-3 col-lg-2">
+
+            <div class="footer-column">
+
+              <h2 class="footer-heading">
+                Quick Links
+              </h2>
+
+
+              <ul class="footer-links">
+
+                <li>
+                  <a href="index.html">
+                    Home
+                  </a>
+                </li>
+
+                <li>
+                  <a href="about.html">
+                    About School
+                  </a>
+                </li>
+
+                <li>
+                  <a href="academics.html">
+                    Academics
+                  </a>
+                </li>
+
+                <li>
+                  <a href="admissions.html">
+                    Admissions
+                  </a>
+                </li>
+
+                <li>
+                  <a href="contact.html">
+                    Contact
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+                     SCHOOL
+                     ================================================= -->
+
+          <div class="col-6 col-md-3 col-lg-2">
+
+            <div class="footer-column">
+
+              <h2 class="footer-heading">
+                School
+              </h2>
+
+
+              <ul class="footer-links">
+
+                <li>
+                  <a href="principal.html">
+                    Principal
+                  </a>
+                </li>
+
+                <li>
+                  <a href="faculty.html">
+                    Faculty
+                  </a>
+                </li>
+
+                <li>
+                  <a href="student-life.html">
+                    Student Life
+                  </a>
+                </li>
+
+                <li>
+                  <a href="events.html">
+                    Events
+                  </a>
+                </li>
+
+                <li>
+                  <a href="gallery.html">
+                    Gallery
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+                     CONTACT
+                     ================================================= -->
+
+          <div class="col-lg-4 col-md-12">
+
+            <div class="footer-column">
+
+              <h2 class="footer-heading">
+                Contact Us
+              </h2>
+
+
+              <ul class="footer-contact-list">
+
+
+                <!-- Address -->
+
+                <li>
+
+                  <span class="footer-contact-icon">
+
+                    <i class="bi bi-geo-alt"></i>
+
+                  </span>
+
+                  <span>
+                    Ghorahi-2, Rampur, Dang, Nepal
+                  </span>
+
+                </li>
+
+
+                <!-- Phone -->
+
+                <li>
+
+                  <span class="footer-contact-icon">
+
+                    <i class="bi bi-telephone"></i>
+
+                  </span>
+
+                  <a href="tel:+977XXXXXXXXXX">
+                    +977-XXXXXXXXXX
+                  </a>
+
+                </li>
+
+
+                <!-- Email -->
+
+                <li>
+
+                  <span class="footer-contact-icon">
+
+                    <i class="bi bi-envelope"></i>
+
+                  </span>
+
+                  <a href="mailto:info@gangaschool.edu.np">
+                    info@gangaschool.edu.np
+                  </a>
+
+                </li>
+
+
+                <!-- Office Hours -->
+
+                <li>
+
+                  <span class="footer-contact-icon">
+
+                    <i class="bi bi-clock"></i>
+
+                  </span>
+
+                  <span>
+                    Sun – Fri:
+                    10:00 AM – 4:00 PM
+                  </span>
+
+                </li>
+
+
+              </ul>
+
+
+              <!-- Contact Button -->
+
+              <a href="contact.html" class="footer-contact-button">
+
+                <span>
+                  Contact School
+                </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER BOTTOM
+         ===================================================== -->
+
+    <div class="site-footer-bottom">
+
+      <div class="container">
+
+        <div class="footer-bottom-inner">
+
+
+          <!-- Copyright -->
+
+          <p>
+
+            ©
+
+            <span id="footer-current-year">
+              2026
+            </span>
+
+            Ganga Secondary School.
+            All rights reserved.
+
+          </p>
+
+
+          <!-- Legal -->
+
+          <div class="footer-legal-links">
+
+            <a href="#">
+              Privacy Policy
+            </a>
+
+            <span aria-hidden="true">
+              |
+            </span>
+
+            <a href="#">
+              Terms &amp; Conditions
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================================
+     BOOTSTRAP JAVASCRIPT
+     ========================================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- =========================================================
+     PROJECT JAVASCRIPT
+     Same shared scripts used by Home / Team for navbar, topbar,
+     announcement marquee and language switching.
+     ========================================================= -->
+
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/include.js" defer></script>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script src="../assets/js/language.js" defer></script>
+
+
+</body>
+
+</html>
